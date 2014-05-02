@@ -6,18 +6,17 @@ git clone git@github.com:TEVASAKI/dotfiles.git
 # Dropbox install #
 
 ### Dropbox 本体を HomeにDownload して展開してアカウント紐付け
-$ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
+>$ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
 
 $ tar zxvf dropbox-lnx.x86.tar.gz
 
 $ ~/.dropbox-dist/dropboxd
 
-- log -
+>log 
 This client is not linked to any account...
 Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.
 Client successfully linked, Welcome tevasaki!
 ^C
-- log -
 
 
 ### 管理スクリプトをDownloadして実行権限を付けて実行パスの通った場所に配置
