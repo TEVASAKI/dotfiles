@@ -1,18 +1,18 @@
 Clone from gitHub
 
-git clone git@github.com:TEVASAKI/dotfiles.git
+    git clone git@github.com:TEVASAKI/dotfiles.git
 
 
-# Dropbox install #
+# Dropbox install
 
 ### Dropbox 本体を HomeにDownload して展開してアカウント紐付け
->$ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
+    $ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
+    
+    $ tar zxvf dropbox-lnx.x86.tar.gz
+    
+    $ ~/.dropbox-dist/dropboxd
 
-$ tar zxvf dropbox-lnx.x86.tar.gz
-
-$ ~/.dropbox-dist/dropboxd
-
->log 
+**log**
 This client is not linked to any account...
 Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.
 Client successfully linked, Welcome tevasaki!
@@ -20,15 +20,15 @@ Client successfully linked, Welcome tevasaki!
 
 
 ### 管理スクリプトをDownloadして実行権限を付けて実行パスの通った場所に配置
-$ wget -O dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
+    $ wget -O dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
+    
+    $ chmod 700 dropbox.py
+    
+    # mv dropbox.py /usr/local/bin/dropbox
+    
+    $ dropbox start -i
 
-$ chmod 700 dropbox.py
-
-$ sudo mv dropbox.py /usr/local/bin/dropbox
-
-$ dropbox start -i
-
-- log -
+**log**
 Starting Dropbox...
 Dropbox is the easiest way to share and store your files online. Want to learn more? Head to https://www.dropbox.com/
  
@@ -37,31 +37,31 @@ Note: python-gpgme is not installed, we will not be able to verify binary signat
 Downloading Dropbox... 100%
 Unpacking Dropbox... 100%
 Done!
-- log -
 
 ### status オプションで同期されているか確認
-$ dropbox status
+`$ dropbox status`
 Idle
 
 ### 同期除外したいフォルダを登録
-$ dropbox exclude add ~/Dropbox/Photos/
+`$ dropbox exclude add ~/Dropbox/Photos/`
 Excluded:
 photos
  
-$ dropbox exclude add ~/Dropbox/public/
+`$ dropbox exclude add ~/Dropbox/public/`
 Excluded:
 public
  
-$ dropbox exclude add ~/Dropbox/share/
+`$ dropbox exclude add ~/Dropbox/share/`
 Excluded:
 share
  
-$ dropbox exclude add ~/Dropbox/tool/
+`$ dropbox exclude add ~/Dropbox/tool/`
 Excluded:
 tool
 
 ### 除外されているかを確認
-$ dropbox exclude list
+`$ dropbox exclude list`
+**log**
 photos
 public
 share
