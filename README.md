@@ -14,10 +14,10 @@ Clone from gitHub
 
 **log**
 
-This client is not linked to any account...
-Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.
-Client successfully linked, Welcome tevasaki!
-^C
+This client is not linked to any account...  
+Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.  
+Client successfully linked, Welcome tevasaki!  
+^C  
 
 
 ### 管理スクリプトをDownloadして実行権限を付けて実行パスの通った場所に配置
@@ -31,14 +31,14 @@ Client successfully linked, Welcome tevasaki!
 
 **log**
 
-Starting Dropbox...
-Dropbox is the easiest way to share and store your files online. Want to learn more? Head to https://www.dropbox.com/
- 
-In order to use Dropbox, you must download the proprietary daemon.
-Note: python-gpgme is not installed, we will not be able to verify binary signatures. [y/n] y
-Downloading Dropbox... 100%
-Unpacking Dropbox... 100%
-Done!
+Starting Dropbox...  
+Dropbox is the easiest way to share and store your files online. Want to learn more? Head to https://www.dropbox.com/  
+   
+In order to use Dropbox, you must download the proprietary daemon.  
+Note: python-gpgme is not installed, we will not be able to verify binary signatures. [y/n] y  
+Downloading Dropbox... 100%  
+Unpacking Dropbox... 100%  
+Done!  
 
 ### status オプションで同期されているか確認
 `$ dropbox status`  
