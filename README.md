@@ -3,24 +3,24 @@ Clone from gitHub
 git clone git@github.com:TEVASAKI/dotfiles.git
 
 
-## Dropbox install ##
+# Dropbox install #
 
-# Dropbox 本体を HomeにDownload して展開してアカウント紐付け
+### Dropbox 本体を HomeにDownload して展開してアカウント紐付け
 $ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
 
 $ tar zxvf dropbox-lnx.x86.tar.gz
 
 $ ~/.dropbox-dist/dropboxd
 
----- log -
+- log -
 This client is not linked to any account...
 Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.
 Client successfully linked, Welcome tevasaki!
 ^C
----- log -
+- log -
 
 
-# 管理スクリプトをDownloadして実行権限を付けて実行パスの通った場所に配置
+### 管理スクリプトをDownloadして実行権限を付けて実行パスの通った場所に配置
 $ wget -O dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
 
 $ chmod 700 dropbox.py
@@ -29,7 +29,7 @@ $ sudo mv dropbox.py /usr/local/bin/dropbox
 
 $ dropbox start -i
 
----- log -
+- log -
 Starting Dropbox...
 Dropbox is the easiest way to share and store your files online. Want to learn more? Head to https://www.dropbox.com/
  
@@ -38,13 +38,13 @@ Note: python-gpgme is not installed, we will not be able to verify binary signat
 Downloading Dropbox... 100%
 Unpacking Dropbox... 100%
 Done!
----- log -
+- log -
 
-# status オプションで同期されているか確認
+### status オプションで同期されているか確認
 $ dropbox status
 Idle
 
-# 同期除外したいフォルダを登録
+### 同期除外したいフォルダを登録
 $ dropbox exclude add ~/Dropbox/Photos/
 Excluded:
 photos
@@ -61,7 +61,7 @@ $ dropbox exclude add ~/Dropbox/tool/
 Excluded:
 tool
 
-# 除外されているかを確認
+### 除外されているかを確認
 $ dropbox exclude list
 photos
 public
