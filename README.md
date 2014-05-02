@@ -41,34 +41,29 @@ Unpacking Dropbox... 100%
 Done!
 
 ### status オプションで同期されているか確認
-`$ dropbox status`
-
+`$ dropbox status`  
 Idle
 
 ### 同期除外したいフォルダを登録
 `$ dropbox exclude add ~/Dropbox/Photos/`
 
-Excluded:
-
-photos
+Excluded:  
+photos  
  
 `$ dropbox exclude add ~/Dropbox/public/`
 
-Excluded:
-
-public
+Excluded:  
+public  
  
 `$ dropbox exclude add ~/Dropbox/share/`
 
-Excluded:
-
-share
+Excluded:  
+share  
  
 `$ dropbox exclude add ~/Dropbox/tool/`
 
-Excluded:
-
-tool
+Excluded:  
+tool  
 
 ### 除外されているかを確認
 `$ dropbox exclude list`
