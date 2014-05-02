@@ -13,6 +13,7 @@ Clone from gitHub
     $ ~/.dropbox-dist/dropboxd
 
 **log**
+
 This client is not linked to any account...
 Please visit https://www.dropbox.com/cli_link?host_id=xxxxyyyyzzzz to link this machine.
 Client successfully linked, Welcome tevasaki!
@@ -29,6 +30,7 @@ Client successfully linked, Welcome tevasaki!
     $ dropbox start -i
 
 **log**
+
 Starting Dropbox...
 Dropbox is the easiest way to share and store your files online. Want to learn more? Head to https://www.dropbox.com/
  
@@ -40,31 +42,41 @@ Done!
 
 ### status オプションで同期されているか確認
 `$ dropbox status`
+
 Idle
 
 ### 同期除外したいフォルダを登録
 `$ dropbox exclude add ~/Dropbox/Photos/`
+
 Excluded:
+
 photos
  
 `$ dropbox exclude add ~/Dropbox/public/`
+
 Excluded:
+
 public
  
 `$ dropbox exclude add ~/Dropbox/share/`
+
 Excluded:
+
 share
  
 `$ dropbox exclude add ~/Dropbox/tool/`
+
 Excluded:
+
 tool
 
 ### 除外されているかを確認
 `$ dropbox exclude list`
 **log**
-photos
-public
-share
-tool
+
+photos  
+public  
+share  
+tool  
 
 
