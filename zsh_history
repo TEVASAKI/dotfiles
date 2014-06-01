@@ -1,0 +1,980 @@
+: 1399057994:0;vi move.sh
+: 1399058144:0;ls -a
+: 1399058153:0;vi move.sh
+: 1399058174:0;bash -x ./move.sh
+: 1399058178:0;ls
+: 1399058183:0;ls -a
+: 1399058203:0;vi move.sh
+: 1399058224:0;bash -x ./move.sh
+: 1399058226:0;la
+: 1399058262:0;rm .bash_history .bash_logout .bash_profile .bashrc .gitconfig .inputrc .vimrc
+: 1399058265:0;ll
+: 1399058270:0;rm dotfiles
+: 1399058272:0;ls
+: 1399058273:0;ls -a
+: 1399058282:0;bash ./move.sh
+: 1399058287:0;ls -a
+: 1399058292:0;ll
+: 1399058313:0;lv .zshrc
+: 1399058321:0;lv .vimrc
+: 1399058343:0;lv .inputrc
+: 1399058347:0;lv .gitconfig
+: 1399058358:0;vi .gitconfig
+: 1399058467:0;ll
+: 1399058501:0;cd Dropbox/dotfiles
+: 1399058501:0;ls
+: 1399058502:0;la
+: 1399058515:0;git add .
+: 1399058520:0;git status
+: 1399058684:0;vi init.sh
+: 1399059550:0;git add .
+: 1399059555:0;git status
+: 1399059594:0;ls
+: 1399059613:0;vim .gitignore
+: 1399059623:0;ls
+: 1399059629:0;lv .git
+: 1399059632:0;lv .gitignore
+: 1399059635:0;cd ..
+: 1399059635:0;ls
+: 1399059637:0;cd
+: 1399059640:0;ls -a
+: 1399059645:0;cd .vim
+: 1399059645:0;ls
+: 1399059662:0;cd ../Dropbox/dotfiles
+: 1399059663:0;l
+: 1399059668:0;vi .gitignore
+: 1399059690:0;git add .
+: 1399059694:0;git status
+: 1399059703:0;cd
+: 1399060346:0;cd Dropbox/dotfiles
+: 1399060347:0;ls
+: 1399060349:0;vi init.sh
+: 1399060458:0;git add .
+: 1399060461:0;git status
+: 1399060462:0;l
+: 1399060468:0;chmod +x init.sh
+: 1399060472:0;lv init.sh
+: 1399060491:0;./init.sh
+: 1399060501:0;vi ./init.sh
+: 1399060512:0;./init.sh
+: 1399060521:0;git push
+: 1399060532:0;git status
+: 1399060567:0;git commit -a
+: 1399060598:0;git push
+: 1399061262:0;l
+: 1399061266:0;vi README.md
+: 1399061457:0;cd .
+: 1399061458:0;cd
+: 1399061460:0;cd src
+: 1399061460:0;ls
+: 1399061464:0;mkdir test
+: 1399061466:0;cd test
+: 1399061469:0;wget "https://www.dropbox.com/download?plat=lnx.x86"
+: 1399061485:0;l
+: 1399061490:0;rm download\?plat=lnx.x86
+: 1399061528:0;wget -o dropbox-lnx.x86 "https://www.dropbox.com/download?plat=lnx.x86"
+: 1399061539:0;l
+: 1399061543:0;man wget
+: 1399061611:0;wget -O dropbox-lnx.x86 "https://www.dropbox.com/download?plat=lnx.x86"
+: 1399061631:0;l
+: 1399061636:0;rm download\?plat=lnx.x86
+: 1399061665:0;wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
+: 1399061684:0;l
+: 1399061696:0;wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"cd ..
+: 1399061700:0;ls
+: 1399061701:0;cd ..
+: 1399061702:0;ls
+: 1399061706:0;rm -rf test
+: 1399061708:0;cd
+: 1399061719:0;vi Dropbox/dotfiles/README.md
+: 1399062620:0;cd Dropbox/dotfiles
+: 1399062625:0;git add .
+: 1399062631:0;git status
+: 1399062635:0;git commit -a
+: 1399062684:0;git push
+: 1399062697:0;git diff HEAD
+: 1399062703:0;git status HEAD
+: 1399062713:0;git log
+: 1399062760:0;vi Dropbox/dotfiles/README.md
+: 1399062778:0;vi README.md
+: 1399062853:0;git commit -a
+: 1399062876:0;git push
+: 1399063324:0;vi README.md
+: 1399063386:0;git commit -a
+: 1399063407:0;git push
+: 1399063471:0;vi README.md
+: 1399063832:0;git commit -a
+: 1399063846:0;git push
+: 1399064072:0;vi README.md
+: 1399064192:0;git commit -a
+: 1399064198:0;git log
+: 1399064205:0;git commit -a
+: 1399064233:0;git push
+: 1399064269:0;vi README.md
+: 1399064506:0;git commit -a
+: 1399064523:0;git push
+: 1399064553:0;vi README.md
+: 1399064586:0;git commit -a
+: 1399064602:0;git push
+: 1399064624:0;vi README.md
+: 1399064672:0;git commit -a
+: 1399064688:0;git push
+: 1399064743:0;ll /usr/local/bin
+: 1399064773:0;Dropbox --help
+: 1399064789:0;vi README.md
+: 1399065026:0;git commit -a
+: 1399065057:0;git push
+: 1399065112:0;vi README.md
+: 1399065679:0;exit
+: 1399065776:0;cd Dropbox/dotfiles
+: 1399065777:0;ls
+: 1399065782:0;lv README.md
+: 1399201394:0;l
+: 1399201396:0;cd
+: 1399201396:0;ls
+: 1399201417:0;ls -a
+: 1399201425:0;lv .inputrc
+: 1399201436:0;lv Dropbox/dotfiles/.inputrc
+: 1399201440:0;ll
+: 1399201455:0;vi Dropbox/dotfiles/init.sh
+: 1399201480:0;cd
+: 1399201487:0;lv .zshrc
+: 1399201507:0;exit
+: 1399201514:0;ls
+: 1399201520:0;rm inputrc
+: 1399201530:0;ln -s Dropbox/dotfiles/.inputrc .
+: 1399201532:0;ls
+: 1399201533:0;ls -a
+: 1399201544:0;lv .zshrc
+: 1399201579:0;sh
+: 1399201588:0;l
+: 1399201596:0;vi .zshrc
+: 1399201721:0;ls
+: 1399201723:0;ls -a
+: 1399201752:0;rm .bashrc .bash_history .bash_logout .gitconfig .inputrc .zshrc
+: 1399201831:0;.bashrc .bash_history .bash_logout
+: 1399201849:0;cp Dropbox/dotfiles/.bashrc Dropbox/dotfiles/.bash_history Dropbox/dotfiles/.bash_logout .
+: 1399201850:0;l
+: 1399201852:0;ls
+: 1399201853:0;ls -a
+: 1399201883:0;rm .bash_profile .vimrc
+: 1399201912:0;cp Dropbox/dotfiles/.bash_profile .
+: 1399201920:0;cp Dropbox/dotfiles/.zshrc .
+: 1399201924:0;cp Dropbox/dotfiles/.vimrc .
+: 1399201926:0;exit
+: 1399201932:0;l
+: 1399201943:0;la
+: 1399201955:0;lv .git-prompt.sh
+: 1399201963:0;cd Dropbox/dotfiles
+: 1399201964:0;la
+: 1399201982:0;cp .bash_history ~
+: 1399201998:0;cp .bash_logout ~
+: 1399202007:0;cp .bash_profile ~
+: 1399202015:0;cp .bashrc ~
+: 1399202026:0;cp .gitconfig ~
+: 1399202039:0;cp .inputrc ~
+: 1399202047:0;cp .vimrc ~
+: 1399202058:0;cp .zshrc ~
+: 1399202064:0;cd
+: 1399202065:0;ls
+: 1399202069:0;source .zshrc
+: 1399202070:0;ls
+: 1399202072:0;exit
+: 1399202075:0;ls
+: 1399202082:0;chsh
+: 1399202095:0;/bin/zsh
+: 1399202105:0;lv .bashrc
+: 1399202191:0;ps -AL | grep bash
+: 1399202195:0;ps -AL
+: 1399202213:0;Dropbox status
+: 1399202338:0;cat /etc/shells
+: 1399202384:0;source .zshrc
+: 1399202388:0;source .bashrc
+: 1399202394:0;su -
+: 1399202404:0;l
+: 1399202412:0;la
+: 1399202420:0;lv .zshrc
+: 1399202433:0;nkf
+: 1399202438:0;nkf --version
+: 1399202443:0;nkf .zshrc
+: 1399202467:0;man nkf
+: 1399202528:0;nkf --guess .zshrc
+: 1399202533:0;nkf --guess .bashrc
+: 1399202543:0;nkf --guess .zsh_history
+: 1399202562:0;nkf --guess .inputrc
+: 1399202631:0;nkf -w --overwrite .bashrc
+: 1399202637:0;source .bashrc
+: 1399202645:0;lv /etc/bashrc
+: 1399202705:0;nkf -g /etc/bashrc
+: 1399202718:0;nkf -g /etc/ntp.conf
+: 1399202731:0;nkf /etc/issue
+: 1399202743:0;nkf -g /etc/issue
+: 1399202758:0;Dropbox stop
+: 1399202761:0;ls
+: 1399202763:0;ls -a
+: 1399202796:0;exit
+: 1399202816:0;ls
+: 1399202817:0;ls -a
+: 1399202820:0;exit
+: 1399202834:0;ls
+: 1399202854:0;l
+: 1399202856:0;ls
+: 1399202863:0;cd
+: 1399202872:0;nkf -g .zshrc
+: 1399202879:0;lv .zshrc
+: 1399202896:0;lv /etc/bashrc
+: 1399202902:0;source .zshrc
+: 1399202911:0;source .bashrc
+: 1399202923:0;lv /etc/bashrc
+: 1399202973:0;exit
+: 1399203153:0;rehash
+: 1399203155:0;su -
+: 1399280741:0;exit
+: 1400143360:0;su -
+: 1400143554:0;cd src
+: 1400143556:0;ls
+: 1400143565:0;vi
+: 1400143575:0;vi --version
+: 1400143630:0;ls
+: 1400143635:0;cd vim
+: 1400143635:0;ls
+: 1400143647:0;hg pull
+: 1400143667:0;hg update
+: 1400143676:0;hg diff
+: 1400143681:0;ls
+: 1400143686:0;./MyConfigure_make.sh
+: 1400143724:0;lv MyConfigure_make.sh
+: 1400143733:0;su -
+: 1400143825:0;vi
+: 1400143835:0;vi --version
+: 1400143867:0;cd ..
+: 1400143871:0;cd vim
+: 1400143876:0;lv MyConfigure_make.sh
+: 1400143905:0;cp MyConfigure_make.sh ../git
+: 1400143908:0;cd ../git
+: 1400143909:0;ls
+: 1400143916:0;git diff
+: 1400143921:0;git log
+: 1400143930:0;git pull
+: 1400143952:0;git log
+: 1400143963:0;cd ..
+: 1400143964:0;ls
+: 1400143972:0;cd curl
+: 1400143978:0;curl --version
+: 1400144028:0;git pull
+: 1400144058:0;cp ../git/MyConfigure_make.sh .
+: 1400144059:0;ls
+: 1400144063:0;vi MyConfigure_make.sh
+: 1400144288:0;./MyConfigure_make.sh
+: 1400144304:0;make
+: 1400144316:0;su -
+: 1400144369:0;ls
+: 1400144391:0;./configure --prefix=/usr/local
+: 1400144430:0;ls
+: 1400144435:0;vi MyConfigure_make.sh
+: 1400144468:0;./MyConfigure_make.sh
+: 1400144517:0;su -
+: 1400160241:0;cd ../git
+: 1400160242:0;ls
+: 1400160246:0;vi MyConfigure_make.sh
+: 1400160269:0;sudo paco -o git
+: 1400160279:0;su -
+: 1400160302:0;vi MyConfigure_make.sh
+: 1400160466:0;./MyConfigure_make.sh
+: 1400160513:0;git --version
+: 1400160539:0;su -
+: 1400160584:0;ls
+: 1400160586:0;cd ..
+: 1400160586:0;ls
+: 1400160591:0;cd tmux
+: 1400160592:0;ls
+: 1400160596:0;git diff
+: 1400160601:0;git pull
+: 1400160610:0;git diff
+: 1400160612:0;git log
+: 1400160666:0;su -
+: 1400160690:0;ls
+: 1400160700:0;cp ../git/MyConfigure_make.sh .
+: 1400160701:0;ls
+: 1400160705:0;vi MyConfigure_make.sh
+: 1400160758:0;./MyConfigure_make.sh
+: 1400160785:0;su -
+: 1400160817:0;ls
+: 1400160820:0;tmux
+: 1400160822:0;l
+: 1400160824:0;exit
+: 1400160832:0;ls
+: 1400160832:0;cd ..
+: 1400160833:0;ls
+: 1400160837:0;cd ricty
+: 1400160837:0;ls
+: 1400160839:0;cd Ricty
+: 1400160840:0;ls
+: 1400160842:0;la
+: 1400160845:0;git pull
+: 1400160890:0;cd ..
+: 1400160891:0;ls
+: 1400160892:0;cd ..
+: 1400160893:0;ls
+: 1400160909:0;cd -
+: 1400160911:0;cd ..
+: 1400160912:0;ls
+: 1400160915:0;pwd
+: 1400160917:0;cd
+: 1400160928:0;exit
+: 1400161881:0;sudo shutdown -h now
+: 1400774852:0;su -
+: 1400774965:0;cd src/vim
+: 1400774968:0;hg pull
+: 1400774997:0;hg log
+: 1400775006:0;hg diff
+: 1400775018:0;vi --version
+: 1400775088:0;hg update
+: 1400775096:0;./MyConfigure_make.sh
+: 1400775126:0;su -
+: 1400775155:0;vi --version
+: 1400775158:0;vi
+: 1400775167:0;ls
+: 1400775170:0;cd ..
+: 1400775171:0;ls
+: 1400775177:0;cd openss
+: 1400775180:0;cd openssl
+: 1400775181:0;ls
+: 1400775187:0;git diff
+: 1400775191:0;git pull
+: 1400775211:0;ls
+: 1400775270:0;cp ../vim/MyConfigure_make.sh .
+: 1400775271:0;ls
+: 1400775274:0;vi MyConfigure_make.sh
+: 1400775465:0;./MyConfigure_make.sh
+: 1400775548:0;openssl --version
+: 1400775557:0;openssl -V
+: 1400775565:0;openssl version
+: 1400775570:0;su -
+: 1400775657:0;ls
+: 1400775665:0;cd ..
+: 1400775665:0;ls
+: 1400775695:0;l
+: 1400775811:0;export DISPLAY=192.168.2.150:0
+: 1400775879:0;xgamma
+: 1400775915:0;su -
+: 1400776058:0;vi
+: 1400776065:0;cd .v
+: 1400776068:0;cd
+: 1400776070:0;cd .vim
+: 1400776070:0;ls
+: 1400776071:0;cd bundle
+: 1400776073:0;ls
+: 1400776085:0;cd neobundle.vim
+: 1400776085:0;ls
+: 1400776167:0;exit
+: 1400776197:0;xgamma
+: 1400776376:0;export DISPLAY=192.168.2.200:0
+: 1400776384:0;export DISPLAY=192.168.2.150:0
+: 1400776387:0;xgamma
+: 1400776408:0;xauth
+: 1400776413:0;xmodmap
+: 1400776518:0;xgamma
+: 1400776529:0;su -
+: 1400777481:0;xev
+: 1400777510:0;export DISPLAY=192.168.2.200:0
+: 1400777514:0;startx
+: 1400777689:0;exit
+: 1400777698:0;startx
+: 1400777717:0;export DISPLAY=192.168.2.150:0
+: 1400777720:0;startx
+: 1400777726:0;gedit
+: 1401545825:0;su -
+: 1401545901:0;t pls
+: 1401545907:0;t lsp
+: 1401545925:0;Dropbox start
+: 1401545935:0;t lsp
+: 1401545968:0;cd src/vim
+: 1401545975:0;hg pull
+: 1401545991:0;hg diff
+: 1401546011:0;hg pull
+: 1401546033:0;hg update
+: 1401546040:0;hg pull
+: 1401546048:0;cd ../git
+: 1401546053:0;git pull
+: 1401546116:0;git --version
+: 1401546133:0;./MyConfigure_make.sh
+: 1401546186:0;cd ../curl
+: 1401546192:0;git pull
+: 1401546214:0;git diff
+: 1401546222:0;./MyConfigure_make.sh
+: 1401546276:0;curl --version
+: 1401546287:0;su -
+: 1401546398:0;cd ../git
+: 1401546407:0;./MyConfigure_make.sh
+: 1401546456:0;su -
+: 1401549923:0;ls
+: 1401549926:0;cd
+: 1401549926:0;ls
+: 1401549928:0;cd src
+: 1401549929:0;ls
+: 1401549931:0;cd vim
+: 1401549934:0;hg pull
+: 1401549940:0;./MyConfigure_make.sh
+: 1401549974:0;vim --version
+: 1401549979:0;su -
+: 1401550036:0;vi --version
+: 1401550040:0;vi
+: 1401550055:0;ls
+: 1401550056:0;cd ..
+: 1401550057:0;ls
+: 1401550058:0;cd ..
+: 1401550058:0;ls
+: 1401550060:0;cd txt
+: 1401550060:0;ls
+: 1401550063:0;cd ..
+: 1401550063:0;ls
+: 1401550065:0;cd www
+: 1401550066:0;ls
+: 1401550068:0;cd ..
+: 1401550068:0;ls
+: 1401550071:0;cd www/nareaiba
+: 1401550072:0;ls
+: 1401550074:0;la
+: 1401550077:0;git pull
+: 1401550106:0;cd ../MapleNareaiba
+: 1401550107:0;ls
+: 1401550111:0;git pull
+: 1401551656:0;cd
+: 1401551659:0;ls
+: 1401551671:0;su -
+: 1401551735:0;sudo vi /etc/ssh/sshd_config
+: 1401551789:0;ls -a
+: 1401551792:0;cd .vim
+: 1401551793:0;ls
+: 1401551796:0;cd bundle
+: 1401551796:0;ls
+: 1401551807:0;git pull
+: 1401551859:0;git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+: 1401551863:0;la
+: 1401551868:0;cd .neobundle
+: 1401551869:0;ls
+: 1401551871:0;cd ..
+: 1401551872:0;cd
+: 1401551882:0;vi .vimrc
+: 1401552084:0;cd .vim
+: 1401552084:0;ls
+: 1401552093:0;la
+: 1401552097:0;cd ..
+: 1401552097:0;ls
+: 1401552102:0;rm -rf .vim
+: 1401552120:0;mkdir -p ~/.vim/bundle
+: 1401552178:0;git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+: 1401552193:0;cd .vim
+: 1401552193:0;ls
+: 1401552194:0;la
+: 1401552196:0;cd bundle
+: 1401552196:0;ls
+: 1401552199:0;cd neobundle.vim
+: 1401552201:0;l
+: 1401552204:0;cd
+: 1401552215:0;vi .vimrc
+: 1401552423:0;vi
+: 1401553293:0;ls
+: 1401553298:0;git commit -a
+: 1401553304:0;la
+: 1401553317:0;ls
+: 1401553323:0;cd Dropbox
+: 1401553324:0;ls
+: 1401553326:0;cd dotfiles
+: 1401553326:0;ls
+: 1401553327:0;la
+: 1401553334:0;git commit
+: 1401553350:0;git commit -a
+: 1401553367:0;git push
+: 1401553376:0;ls
+: 1401553380:0;vi init.sh
+: 1401553415:0;lv README.md
+: 1401553672:0;cd
+: 1401553675:0;vi
+: 1401553679:0;ls -l
+: 1401553682:0;ls -al
+: 1401553694:0;vi .vimrc
+: 1401553905:0;cd src/vim
+: 1401553908:0;hg pull
+: 1401553913:0;hg update
+: 1401553922:0;hg pull -u
+: 1401554037:0;vi
+: 1401554452:0;gedit
+: 1401554489:0;gzip
+: 1401554506:0;getkey
+: 1401554516:0;ps -al
+: 1401554521:0;ps -AL
+: 1401554534:0;ps -AL | grep get
+: 1401554538:0;gedit
+: 1401554594:0;su -
+: 1401554640:0;ls -a
+: 1401554642:0;cd
+: 1401554643:0;ls
+: 1401554646:0;la
+: 1401554664:0;rm -rf .gconf
+: 1401554676:0;rm -rf .gconfd
+: 1401554694:0;rm -rf /tmp/gedit.teva.2327875713
+: 1401554699:0;gedit
+: 1401554739:0;ls
+: 1401554740:0;cd src
+: 1401554741:0;ls
+: 1401554778:0;sudo vi /etc/ssh/sshd_config
+: 1401554806:0;su -
+: 1401555083:0;sudo vi /etc/ssh/sshd_config
+: 1401555164:0;su -
+: 1401556767:0;wget http://flavio.tordini.org/files/minitube/minitube.tar.gz
+: 1401556775:0;ls
+: 1401556790:0;tar zxvf minitube.tar.gz
+: 1401556792:0;ls
+: 1401556793:0;cd minitube
+: 1401556794:0;ls
+: 1401556797:0;lv TODO
+: 1401556801:0;lv INSTALL
+: 1401556813:0;qmake
+: 1401556991:0;ls
+: 1401556993:0;cd ..
+: 1401557020:0;wget http://download.qt-project.org/official_releases/online_installers/qt-opensource-linux-x64-1.6.0-3-online.run
+: 1401557034:0;l
+: 1401557060:0;mkdir To-minitube
+: 1401557061:0;ls
+: 1401557068:0;mv qt-opensource-linux-x64-1.6.0-3-online.run To-minitube
+: 1401557069:0;ls
+: 1401557074:0;cd To-minitube
+: 1401557075:0;ls
+: 1401557081:0;chmod +x qt-opensource-linux-x64-1.6.0-3-online.run
+: 1401557085:0;./qt-opensource-linux-x64-1.6.0-3-online.run
+: 1401557445:0;l
+: 1401557454:0;wget http://download.kde.org/stable/phonon/4.7.1/phonon-4.7.1.tar.xz
+: 1401557530:0;l
+: 1401557536:0;tar zxvf phonon-4.7.1.tar.xz
+: 1401557569:0;tar Jxf phonon-4.7.1.tar.xz
+: 1401557571:0;l
+: 1401557575:0;cd phonon-4.7.1
+: 1401557575:0;ls
+: 1401557609:0;mkdir build && cd build
+: 1401557613:0;cmake
+: 1401557622:0;qt
+: 1401557629:0;cd
+: 1401557630:0;ls
+: 1401557632:0;cd qt
+: 1401557633:0;ls
+: 1401557638:0;cd Tools
+: 1401557638:0;ls
+: 1401557640:0;cd QtCreator
+: 1401557641:0;ls
+: 1401557643:0;cd bin
+: 1401557644:0;ls
+: 1401557652:0;qmake
+: 1401557658:0;cd ..
+: 1401557659:0;ls
+: 1401557663:0;cd share
+: 1401557663:0;ls
+: 1401557665:0;cd
+: 1401557762:0;ls
+: 1401557764:0;cd qt
+: 1401557764:0;ls
+: 1401557769:0;cd 5.3
+: 1401557770:0;ls
+: 1401557772:0;cd gcc_64
+: 1401557774:0;ls
+: 1401557776:0;cd bin
+: 1401557776:0;ls
+: 1401557783:0;./qmake
+: 1401557789:0;./qmake --version
+: 1401557794:0;pwd
+: 1401557824:0;ls /opt
+: 1401557846:0;./qtpaths
+: 1401557887:0;cd
+: 1401557891:0;cd qt/Tools
+: 1401557891:0;ls
+: 1401557893:0;cd QtCreator
+: 1401557894:0;ls
+: 1401557897:0;cd bin
+: 1401557898:0;ls
+: 1401557905:0;./qtcreator
+: 1401557923:0;sudo updatedb
+: 1401557961:0;locate libstdc++.so.6
+: 1401558001:0;su -
+: 1401558031:0;./qtcreator
+: 1401558044:0;gcc --version
+: 1401558117:0;cd
+: 1401558119:0;cd src
+: 1401558119:0;ls
+: 1401558126:0;git clone git@github.com:mirrors/gcc.git
+: 1401559141:0;ls
+: 1401559152:0;cd To-minitube
+: 1401559152:0;ls
+: 1401559157:0;wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/single/qt-everywhere-opensource-src-5.3.0.tar.gz
+: 1401559247:0;ls
+: 1401559249:0;ll
+: 1401559261:0;tar zxvf qt-everywhere-opensource-src-5.3.0.tar.gz
+: 1401559310:0;ls
+: 1401559313:0;cd qt-everywhere-opensource-src-5.3.0
+: 1401559313:0;ls
+: 1401559346:0;./configure
+: 1401559458:0;tmux
+: 1401559461:0;ls
+: 1401559465:0;gmake
+: 1401559607:0;cd ..
+: 1401559608:0;ls
+: 1401559654:0;su -
+: 1401559908:0;tmux a
+: 1401563344:0;ls
+: 1401563388:0;su -
+: 1401563706:0;ls
+: 1401563712:0;lv README
+: 1401563960:0;gcc -v
+: 1401564153:0;paco -a
+: 1401564159:0;cd ..
+: 1401564160:0;ls
+: 1401564168:0;cd
+: 1401564170:0;cd qt
+: 1401564171:0;ls
+: 1401564174:0;cd Tools
+: 1401564176:0;ls
+: 1401564185:0;cdcd
+: 1401564192:0;cd ..
+: 1401564193:0;ls
+: 1401564195:0;cd 5.3
+: 1401564195:0;l
+: 1401564197:0;cd gcc_64
+: 1401564198:0;ls
+: 1401564202:0;cd bin
+: 1401564202:0;ls
+: 1401564207:0;./qmake
+: 1401564315:0;cd
+: 1401564317:0;ls
+: 1401564319:0;cd src
+: 1401564322:0;cd minitube
+: 1401564322:0;ls
+: 1401564348:0;/home/teva/qt/5.3/gcc_64/bin/qmake
+: 1401564358:0;cd
+: 1401564359:0;cd src
+: 1401564364:0;git clone git://gitorious.org/qt/qt5.git qt5
+: 1401564373:0;ls
+: 1401564377:0;cd qt5
+: 1401564378:0;ls
+: 1401564408:0;git checkout stable
+: 1401564497:0;su -
+: 1401564824:0;cd
+: 1401564825:0;cd src
+: 1401564826:0;ls
+: 1401564844:0;wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -O /etc/yum.repos.d/devtools-1.1.repo
+: 1401564861:0;exit
+: 1401564864:0;cd
+: 1401564866:0;cd src
+: 1401564875:0;sudo http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -O /etc/yum.repos.d/devtools-1.1.repo
+: 1401564898:0;sudo wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -O /etc/yum.repos.d/devtools-1.1.repo
+: 1401564905:0;ls
+: 1401564918:0;ls /etc/yum.repos.d
+: 1401564926:0;su -
+: 1401565182:0;ls
+: 1401565185:0;cd qt5
+: 1401565185:0;ls
+: 1401565190:0;perl init-repository
+: 1401570010:0;l
+: 1401570108:0;./configure -developer-build -opensource -nomake examples -nomake tests
+: 1401570280:0;make -j 4
+: 1401571407:0;ls
+: 1401571415:0;lv Makefile
+: 1401571426:0;lv configure
+: 1401571441:0;lv init-repository
+: 1401571455:0;make clean
+: 1401571653:0;l
+: 1401571656:0;vi configure
+: 1401634699:0;grep -F "gccout=`LC_ALL=C $TEST_COMPILER "\
+
+: 1401634717:0;grep -F "gccout=`LC_ALL=C"
+: 1401634746:0;grep -F "gccout=`LC_ALL=C" *.sh
+: 1401634758:0;grep  "gccout=`LC_ALL=C" *.sh
+: 1401634768:0;grep "gccout" *.sh
+: 1401634793:0;grep -F "gccout" *.sh
+: 1401634824:0;lv configure
+: 1401634951:0;su -
+: 1401635711:0;ls
+: 1401635716:0;qmake
+: 1401635756:0;PATH=$PATH:$HOME/bin:/usr/lib64/qt5/bin
+: 1401635761:0;qmake --version
+: 1401635766:0;ls
+: 1401635767:0;cd ..
+: 1401635768:0;ls
+: 1401635772:0;cd minitube
+: 1401635772:0;ls
+: 1401635774:0;qmake
+: 1401635782:0;su
+: 1401635842:0;ls
+: 1401635844:0;qmake
+: 1401635852:0;sudo ldconfig
+: 1401635858:0;qmake
+: 1401635868:0;qmake -V
+: 1401635983:0;which qmake
+: 1401636083:0;su -
+: 1401636264:0;exit
+: 1401636536:0;su -
+: 1401637125:0;ls
+: 1401637127:0;cd src
+: 1401637127:0;ls
+: 1401637133:0;wget ftp://fr2.rpmfind.net/linux/mageia/distrib/cauldron/x86_64/media/core/release/minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401637191:0;sudo rpm -ivh minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401637210:0;whereis libc.so.6
+: 1401637249:0;sudo yum install phonon-backend
+: 1401637261:0;sudo yum search phonon
+: 1401637285:0;sudo yum install phonon-backend-gstreamer.i686
+: 1401637309:0;sudo yum install phonon-backend-gstreamer.x86_64
+: 1401637319:0;sudo rpm -ivh minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401637328:0;whereis libc.so.6
+: 1401637344:0;ls
+: 1401637670:0;sudo yum install minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401637750:0;sudo yum install glibc-static
+: 1401637759:0;sudo yum install minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401637790:0;sudo yum whatprovides libc.so.6
+: 1401637842:0;sudo yum install glibc-2.12-1.132.el6_5.1.i686
+: 1401637848:0;yum update
+: 1401637988:0;ls
+: 1401637995:0;cd To-minitube
+: 1401637996:0;ls
+: 1401638000:0;cd phonon-4.7.1
+: 1401638001:0;ls
+: 1401638046:0;cmake -DCMAKE_INSTALL_PREFIX=$QT4DIR -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_LIBDIR=lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=TRUE -DDBUS_INTERFACES_INSTALL_DIR=/usr/share/dbus-1/interfaces -Wno-dev .. &&\
+
+: 1401638053:0;cmake -DCMAKE_INSTALL_PREFIX=$QT4DIR -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_LIBDIR=lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=TRUE -DDBUS_INTERFACES_INSTALL_DIR=/usr/share/dbus-1/interfaces -Wno-dev ..
+: 1401638069:0;cd build
+: 1401638069:0;ls
+: 1401638074:0;cmake -DCMAKE_INSTALL_PREFIX=$QT4DIR -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_LIBDIR=lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=TRUE -DDBUS_INTERFACES_INSTALL_DIR=/usr/share/dbus-1/interfaces -Wno-dev ..
+: 1401638333:0;sudo yum install glibc.i686 libgcc.i686 libXrender.i686 libSM.i686 libXext.i686
+: 1401638375:0;sudo yum install glibc-utils.x86_64
+: 1401638415:0;ls
+: 1401638417:0;cd
+: 1401638419:0;cd src
+: 1401638420:0;ls
+: 1401638436:0;sudo yum install minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401638463:0;sudo updatedb
+: 1401638481:0;locate libc.so.6
+: 1401638528:0;/lib/libc.so.6
+: 1401638928:0;gcc --version
+: 1401639955:0;ls
+: 1401639976:0;wget http://ftp.gnome.org/pub/gnome/sources/glib/2.40/glib-2.40.0.tar.xz
+: 1401639992:0;tar Jxvf glib-2.40.0.tar.xz
+: 1401639993:0;l
+: 1401639995:0;cd glib-2.40.0
+: 1401639996:0;ls
+: 1401640026:0;./configure --prefix=/usr/local
+: 1401640037:0;sudo yum install libffi
+: 1401640065:0;locate libffi
+: 1401640088:0;sudo yum install libffi-devel
+: 1401640095:0;./configure --prefix=/usr/local
+: 1401640114:0;make -j 4
+: 1401640208:0;cd ..
+: 1401640208:0;ls
+: 1401640214:0;rm -rf glib-2.40.0
+: 1401640218:0;rm glib-2.40.0.tar.xz
+: 1401640225:0;git clone git@github.com:GNOME/glib.git
+: 1401640344:0;ls
+: 1401640350:0;cd glib
+: 1401640351:0;ls
+: 1401640361:0;autoreconf -i
+: 1401640378:0;l
+: 1401640391:0;./configure --prefix=/usr/local
+: 1401640408:0;ls
+: 1401640413:0;lv INSTALL.in
+: 1401640457:0;lv README.in
+: 1401640471:0;lv INSTALL.in
+: 1401640535:0;make -j 4
+: 1401640537:0;l
+: 1401640561:0;./compile
+: 1401640567:0;./compile --help
+: 1401640577:0;lv INSTALL.in
+: 1401640587:0;make
+: 1401640591:0;./configure
+: 1401640608:0;make
+: 1401640617:0;l
+: 1401640635:0;./autogen.sh
+: 1401640672:0;l
+: 1401640684:0;./configure --prefix=/usr/local
+: 1401640704:0;l
+: 1401640708:0;lv INSTALL
+: 1401640783:0;make test-nonrecursive
+: 1401640786:0;make test
+: 1401640791:0;make tests
+: 1401640796:0;lv INSTALL
+: 1401640808:0;make check
+: 1401641223:0;make -j 4
+: 1401641228:0;l
+: 1401641234:0;su -
+: 1401641270:0;sudo ldconfig
+: 1401641283:0;sudo updatedb
+: 1401641288:0;locate glibc
+: 1401641293:0;su -
+: 1401641312:0;ls
+: 1401641313:0;cd ..
+: 1401641313:0;ls
+: 1401641317:0;cd glib
+: 1401641319:0;la
+: 1401641331:0;cp ../git/MyConfigure_make.sh
+: 1401641335:0;cp ../git/MyConfigure_make.sh .
+: 1401641336:0;ls
+: 1401641340:0;vi MyConfigure_make.sh
+: 1401641429:0;git pull
+: 1401641443:0;git update
+: 1401641458:0;l
+: 1401641460:0;cd ..
+: 1401641461:0;ls
+: 1401641481:0;sudo yum install minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401641495:0;exit
+: 1401641504:0;cd src
+: 1401641505:0;ls
+: 1401641511:0;sudo yum install minitube-2.1.6-1.mga5.x86_64.rpm
+: 1401641921:0;sudo reboot
+: 1401647460:0;l
+: 1401647464:0;lv move.sh
+: 1401647473:0;la
+: 1401647482:0;la .*
+: 1401647510:0;ls .*
+: 1401647516:0;ls *
+: 1401647521:0;l
+: 1401647522:0;la
+: 1401647532:0;cd Dropbox
+: 1401647533:0;ls
+: 1401647536:0;cd dotfiles
+: 1401647537:0;ls
+: 1401647538:0;la
+: 1401647544:0;lv init.sh
+: 1401647560:0;cd
+: 1401647560:0;ls
+: 1401647564:0;vi .vimrc
+: 1401647606:0;lv init.sh
+: 1401647610:0;la
+: 1401647614:0;cd Dropbox
+: 1401647617:0;cd dotfiles
+: 1401647619:0;lv init.sh
+: 1401647716:0;ls
+: 1401647719:0;la
+: 1401647736:0;rm .bash_history .bash_logout .bash_profile .bashrc
+: 1401647759:0;lv .zshrc
+: 1401647767:0;lv .vimrc
+: 1401647780:0;cd
+: 1401647785:0;lv .zshrc
+: 1401647791:0;man lv
+: 1401647838:0;l
+: 1401647840:0;cd Dropbox
+: 1401647840:0;ls
+: 1401647842:0;cd dotfiles
+: 1401647843:0;ls
+: 1401647845:0;la
+: 1401647857:0;rm .inputrc .vimrc .zsh_history .zshrc
+: 1401647858:0;ls
+: 1401647864:0;lv README.md
+: 1401647875:0;l
+: 1401647880:0;vi init.sh
+: 1401647903:0;Dropbox start
+: 1401647915:0;Dropbox status
+: 1401647921:0;Dropbox start
+: 1401647928:0;Dropbox status
+: 1401647933:0;Dropbox stop
+: 1401647937:0;Dropbox start
+: 1401647972:0;Dropbox stop
+: 1401647976:0;Dropbox status
+: 1401647978:0;exit
+: 1401648002:0;Dropbox start
+: 1401648018:0;lv /usr/bin/xauth
+: 1401648024:0;/usr/bin/xauth
+: 1401648034:0;sudo /usr/bin/xauth
+: 1401648058:0;exit
+: 1401648102:0;gedit
+: 1401648121:0;sudo vi /etc/ssh/sshd_config
+: 1401648134:0;su -
+: 1401648150:0;exit
+: 1401648184:0;la
+: 1401648195:0;lv .Xauthority
+: 1401648232:0;su -
+: 1401648418:0;export DISPLAY=192.168.2.150:0.0
+: 1401648422:0;gedit
+: 1401648436:0;ls
+: 1401648442:0;Dropbox start
+: 1401648450:0;Dropbox stop
+: 1401648454:0;Dropbox start
+: 1401648459:0;Dropbox restart
+: 1401648469:0;Dropbox autostart
+: 1401648478:0;Dropbox autostart y
+: 1401648481:0;exit
+: 1401648487:0;ls
+: 1401648491:0;gedit
+: 1401648498:0;la
+: 1401648502:0;lv .Xauthority
+: 1401648519:0;export DISPLAY=192.168.2.150:0.0
+: 1401648521:0;gedit
+: 1401648564:0;l
+: 1401648566:0;cd txt
+: 1401648566:0;ls
+: 1401648570:0;vi Á∑®ÈÉªÉ¶‰∏≠„ÅÆ„É£É©„Ç≠„É£•„É£°„É£≥„É£É®\ 1
+: 1401648591:0;gedit Á∑®ÈÉªÉ¶‰∏≠„ÅÆ„É£É©„Ç≠„É£•„É£°„É£≥„É£É®\ 1
+: 1401648628:0;l
+: 1401648632:0;rm Á∑®ÈÉªÉ¶‰∏≠„ÅÆ„É£É©„Ç≠„É£•„É£°„É£≥„É£É®\ 1
+: 1401648633:0;ls
+: 1401648635:0;cd ..
+: 1401648636:0;ls
+: 1401648644:0;cd Dropbox
+: 1401648645:0;ls
+: 1401648646:0;cd dotfiles
+: 1401648647:0;ls
+: 1401648650:0;lv init.sh
+: 1401648694:0;ls
+: 1401648695:0;la
+: 1401648699:0;vi .gitignore
+: 1401648729:0;l
+: 1401648881:0;git submodule add git://github.com/gmarik/vundle.git vim/bundle
+: 1401648931:0;ls
+: 1401648937:0;cd vim
+: 1401648937:0;ls
+: 1401648938:0;la
+: 1401648941:0;cd bundle
+: 1401648941:0;ls
+: 1401648947:0;cd ..
+: 1401648948:0;ls
+: 1401648949:0;cd ..
+: 1401648950:0;ls
+: 1401648951:0;la
+: 1401648956:0;lv .gitconfig
+: 1401648967:0;vi init.sh
+: 1401649137:0;ls
+: 1401649141:0;la
+: 1401649165:0;mv ../../move.sh .
+: 1401649166:0;ls
+: 1401649169:0;vi move.sh
+: 1401651999:0;l
+: 1401652000:0;la
+: 1401652011:0;./move.sh
+: 1401652012:0;la
+: 1401652013:0;l
+: 1401652016:0;cd
+: 1401652019:0;ls -a
+: 1401652041:0;lv .inputrc
+: 1401652045:0;lv .vimrc
+: 1401652052:0;cd Dropbox/dotfiles
+: 1401652053:0;ls
+: 1401652058:0;chmod -x move.sh
+: 1401652060:0;l
+: 1401652067:0;vi init.sh
+: 1401652133:0;l
+: 1401652135:0;la
+: 1401652160:0;ls
+: 1401652164:0;git commit -a
+: 1401652195:0;git push
+: 1401652206:0;git diff
+: 1401652234:0;ls
+: 1401652239:0;git commit -a
+: 1401652246:0;git add -a
+: 1401652250:0;git add
+: 1401652259:0;git add -all
+: 1401652350:0;git add
+: 1401652398:0;ls
+: 1401652406:0;git status
+: 1401652416:0;git bash_history
+: 1401652427:0;git add bash_history
+: 1401652430:0;git log
+: 1401652443:0;git add bash*
+: 1401652448:0;git status
+: 1401652463:0;git add gitconfig inputrc move.sh vimrc zsh*
+: 1401652466:0;git status
+: 1401652475:0;git add zsh_history
