@@ -978,3 +978,11 @@
 : 1401652463:0;git add gitconfig inputrc move.sh vimrc zsh*
 : 1401652466:0;git status
 : 1401652475:0;git add zsh_history
+: 1401652479:0;git commit
+: 1401652553:0;git push
+: 1401652683:0;git submodule add
+: 1401652704:0;git submodule update --init
+: 1401652709:0;git add
+: 1401652715:0;git add *
+: 1401652718:0;git status
+: 1401652734:0;git commit -a
