@@ -132,4 +132,4 @@ NeoBundle 'Shougo/neocomplcache'  " 入力補完機能を提供する
 "NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
-
+" modifi------(;
