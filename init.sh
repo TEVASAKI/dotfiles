@@ -32,6 +32,6 @@ ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/inputrc $HOME/.inputrc
 ln -s $DOTFILES/vimrc $HOME/.vimrc
 
-vim -c ':BundleInstall!'
+vi -c ':NeoBundleInstall!'
 
 

@@ -151,7 +151,8 @@ NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシ�
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、ファイルタイプ別プラグイン/イ
 " ンデントを有効化する
-filetype plugin indent    on
+filetype plugin   on
+filetype indent   on
 
 " Install Check.
 NeoBundleCheck
