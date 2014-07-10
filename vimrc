@@ -51,8 +51,7 @@ set smartcase
 
 " 検索パターンマッチ箇所の強調表示
 " そして検索結果のハイライトをさり気なく消す。
-" 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におか
-" しくなる
+" 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
 
@@ -91,6 +90,23 @@ set backup
 set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
 
+" Ctrl + n / p の配色設定
+hi  Pmenu ctermbg=4
+hi  Pmenusel ctermbg=1
+hi  PMenuSbar ctermbg=4
+
+"-----------------------------------------------------------------------------------------------------
+" 拡張
+"-----------------------------------------------------------------------------------------------------
+" Window 分割関連
+" insert mode 時でもCtrl + w,v を押すと縦分割され、 
+" Ctrl + w,h を押すと横分割される。
+map <C-W><C-V>  :Vexplore!<CR>
+map <C-W><C-H>  :Hexplore<CR>
+map! <C-W><C-V>  <Esc>:Vexplore!<CR>
+map! <C-W><C-H>  <Esc>:Hexplore<CR>
+let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
+
 "-----------------------------------------------------------------------------------------------------
 " Indent
 "-----------------------------------------------------------------------------------------------------
@@ -114,22 +130,22 @@ vnoremap < <gv
 vnoremap > >gv
 
 if has("autocmd")
-	" ファイルタイプの検索を有効にする
-	filetype plugin on
-	" そのファイルタイプに合わせたインデントを利用する
-	filetype indent on
-	" これらのfiletypeではインデントを無効に
-	" autocmd FileType php filetype indent off
+  " ファイルタイプの検索を有効にする
+  filetype plugin on
+  " そのファイルタイプに合わせたインデントを利用する
+  filetype indent on
+  " これらのfiletypeではインデントを無効に
+  " autocmd FileType php filetype indent off
 
-	autocmd FileType apache		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType c		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType css		setlocal sw=2 sts=2 ts=2 et
-	autocmd FileType html		setlocal sw=2 sts=2 ts=2 et
-	autocmd FileType java		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType php		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType ruby		setlocal sw=2 sts=2 ts=2 et
-	autocmd FileType sh		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType apache	setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType c	  	setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType html		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType java		setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType php		setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType sh	  	setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
 endif
 
 "-----------------------------------------------------------------------------------------------------
@@ -177,8 +193,8 @@ NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシ�
 " NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
 
 
-" 読み込んだPluginsを含め、ファイルタイプの検出、ファイルタイプ別プラグイン/イ
-" ンデントを有効化する
+" 読み込んだPluginsを含め、ファイルタイプの検出、
+" ファイルタイプ別プラグイン/インデントを有効化する。
 filetype plugin   on
 filetype indent   on
 
