@@ -50,23 +50,34 @@ set smartcase
 " |------------------------------------------------
 
 " 検索パターンマッチ箇所の強調表示
+" そして検索結果のハイライトをさり気なく消す。
+" 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におか
+" しくなる
 set hlsearch
+nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+
 " 現在のモードの表示
 set showmode
+
 " コマンド入力状況の表示
 set showcmd
+
 " タブ入力を複数の空白入力に置き換える
 set expandtab
+
 " TAB width of 4
 set tabstop=2
+
 " Shift width of 4
 set shiftwidth=2
+
 " If you type the Tab in the margin of the beginning of a line, to indent the number of 'shiftwidth'.
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
 
 " View closing parenthesis the corresponding
 set showmatch
+
 " Shift-jis support
 set fileencodings=sjis,utf-8
 
@@ -80,12 +91,6 @@ set backup
 set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
 
-" 検索結果のハイライトをさり気なく消す
-" 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におか
-" しくなる
-set hlsearch
-nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
-
 "-----------------------------------------------------------------------------------------------------
 " Indent
 "-----------------------------------------------------------------------------------------------------
@@ -93,10 +98,13 @@ nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
 " 新しい行を作ったときに高度な自動インデントを行う
 " 新しい行を開始した時に、新しい行のインデントを現在行と同じ量にするという事。
 set smartindent
+
 " 自動でインデント
 set autoindent
+
 " ペースト時にautoindent を無効に(ONにするとautocomplpop.vimが動かない(謎) 
 set paste
+
 " Cソースの自動インデントを始める
 set cindent
 
@@ -167,7 +175,6 @@ NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの 
 NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
 
 " NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
-" NeoBundle 'mattn/flappyvird-vim'
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、ファイルタイプ別プラグイン/イ
