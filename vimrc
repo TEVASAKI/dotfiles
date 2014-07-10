@@ -98,52 +98,64 @@ if has("autocmd")
 	" autocmd FileType php filetype indent off
 
 	autocmd FileType apache		setlocal sw=4 sts=4 ts=4 et
-	autocmd FileType c			setlocal sw=4 sts=4 ts=4 et
+	autocmd FileType c		setlocal sw=4 sts=4 ts=4 et
 	autocmd FileType css		setlocal sw=2 sts=2 ts=2 et
 	autocmd FileType html		setlocal sw=2 sts=2 ts=2 et
 	autocmd FileType java		setlocal sw=4 sts=4 ts=4 et
 	autocmd FileType php		setlocal sw=4 sts=4 ts=4 et
 	autocmd FileType ruby		setlocal sw=2 sts=2 ts=2 et
-	autocmd FileType sh			setlocal sw=4 sts=4 ts=4 et
+	autocmd FileType sh		setlocal sw=4 sts=4 ts=4 et
 	autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
 endif
 
 "-----------------------------------------------------------------------------------------------------
-" neobundle
+" Start NeoBundle Settings.
 "-----------------------------------------------------------------------------------------------------
+" vi 互換モード
+set nocompatible
 
-set nocompatible               " be iMproved
-filetype off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+" NeoBundle environment
+if has('win32') || has('win64')
+  set shellslash
+  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
+else
+  let $VIMDIR = expand('~/.vim')
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+" bundle で管理するディレクトリを指定
+if has('vim_starting')
+  set runtimepath+=$VIMDIR/bundle/neobundle.vim/
+endif
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" neobundle.vim の初期化
+call neobundle#rc(expand('$VIMDIR/bundle'))
 
-" add plugins
-filetype plugin on
-filetype plugin indent on     " required!
-filetype indent on
-syntax on
+" NeoBundle 自体をNeoBundleで管理
+NeoBundleFetch 'Shougo/NeoBundle.vim'
 
+
+" 今後はここ以降にPluginsを追記していく。
+" original repos on github
+" NeoBundle 'Shougo/vimproc', {
+"   \ 'build' : {
+"   \   'windows' : 'make -f make_mingw32.mak',
+"   \   'cygwin' : 'make -f make_cygwin.mak',
+"   \   'mac' : 'make -f make_mac.mac',
+"   \   'unix' : 'make -f make_unix.mak',
+"   \   },
+"   \ }
+
+NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの の編集補助
+
+NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
+
+" 読み込んだPluginsを含め、ファイルタイプの検出、ファイルタイプ別プラグイン/イ
+" ンデントを有効化する
+filetype plugin indent    on
+
+" Install Check.
 NeoBundleCheck
-
-" originalrepos on github
-"NeoBundle 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/vimproc'
-"NeoBundle 'VimClojure'
-"NeoBundle 'Shougo/vimshell'
-"NeoBundle 'Shougo/unite.vim'      " ファイラとして利用
-NeoBundle 'Shougo/neocomplcache'  " 入力補完機能を提供する
-"NeoBundle 'Shougo/neosnippet'     " スニペット入力サポート
-"NeoBundle 'jpalardy/vim-slime'
-"NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの の編集補助
-"NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-
-" modifi------(;
+"-----------------------------------------------------------------------------------------------------
+" End NeoBundle Settings.
+"-----------------------------------------------------------------------------------------------------
+"
