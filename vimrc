@@ -70,6 +70,22 @@ set showmatch
 " Shift-jis support
 set fileencodings=sjis,utf-8
 
+" backup , swap の出力先を設定 
+if has('win32') || has('win64')
+  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\')
+else
+  let $VIMDIR = expand('~/.vim')
+endif
+set backup
+set backupdir=$VIMDIR/backup-files
+let &directory = &backupdir
+
+" 検索結果のハイライトをさり気なく消す
+" 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におか
+" しくなる
+set hlsearch
+nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+
 "-----------------------------------------------------------------------------------------------------
 " Indent
 "-----------------------------------------------------------------------------------------------------
@@ -136,18 +152,23 @@ NeoBundleFetch 'Shougo/NeoBundle.vim'
 
 " 今後はここ以降にPluginsを追記していく。
 " original repos on github
-" NeoBundle 'Shougo/vimproc', {
-"   \ 'build' : {
-"   \   'windows' : 'make -f make_mingw32.mak',
-"   \   'cygwin' : 'make -f make_cygwin.mak',
-"   \   'mac' : 'make -f make_mac.mac',
-"   \   'unix' : 'make -f make_unix.mak',
-"   \   },
-"   \ }
-
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \   'mac' : 'make -f make_mac.mac',
+  \   'unix' : 'make -f make_unix.mak',
+  \   },
+  \ }
+" windows は自分でコンパイルする事にするー
+"  \   'windows' : 'make -f make_mingw32.mak',
+"  \   'cygwin' : 'make -f make_cygwin.mak',
+"
 NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの の編集補助
 
 NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
+
+" NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
+" NeoBundle 'mattn/flappyvird-vim'
+
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、ファイルタイプ別プラグイン/イ
 " ンデントを有効化する
