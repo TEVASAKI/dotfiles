@@ -108,7 +108,7 @@ map! <C-W><C-H>  <Esc>:Hexplore<CR>
 let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
 
 " Space + . で、_vimrc を編集出来るようにする。
-nnoremap <Space>.   :<C-u>edit $MYVIMRC<Enter>
+nnoremap <Space>.   :<C-u>edit $MYVIMRC<CR>
 
 "-----------------------------------------------------------------------------------------------------
 " Indent
