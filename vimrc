@@ -64,10 +64,10 @@ set showcmd
 " タブ入力を複数の空白入力に置き換える
 set expandtab
 
-" TAB width of 4
+" TAB width of 2
 set tabstop=2
 
-" Shift width of 4
+" Shift width of 2
 set shiftwidth=2
 
 " If you type the Tab in the margin of the beginning of a line, to indent the number of 'shiftwidth'.
