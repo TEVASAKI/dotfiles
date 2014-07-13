@@ -25,6 +25,8 @@
 "-----------------------------------------------------------------------------------------------------
 " 基本
 "-----------------------------------------------------------------------------------------------------
+" 強制前保存終了を無効化
+nnoremap  ZZ  <Nop>
 " line number display
 set number
 " syntax highlighting
@@ -54,6 +56,7 @@ set smartcase
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+" vim-hier のハイライト削除
 "nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
 " 現在のモードの表示
