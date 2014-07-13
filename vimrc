@@ -54,6 +54,7 @@ set smartcase
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+"nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
 " 現在のモードの表示
 set showmode
@@ -91,9 +92,9 @@ set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
 
 " Ctrl + n / p の配色設定
-hi  Pmenu ctermbg=4
-hi  Pmenusel ctermbg=1
-hi  PMenuSbar ctermbg=4
+" hi  Pmenu ctermbg=4
+" hi  Pmenusel ctermbg=1
+" hi  PMenuSbar ctermbg=4
 
 "-----------------------------------------------------------------------------------------------------
 " 拡張
@@ -195,6 +196,8 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの の編集補助
 
 NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
+  "let g:lightline = { 'colorscheme':  'landscape', }
+  "set laststatus=2
 
 " NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
 
