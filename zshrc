@@ -60,7 +60,7 @@ alias lv='lv -laOu8c'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias t='~/src/todo.txt_cli-2.10/todo.sh -a -t'
+alias t='~/src/todo.txt-cli/todo.sh -a -t'
 
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
 
