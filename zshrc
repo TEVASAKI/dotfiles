@@ -60,7 +60,10 @@ alias lv='lv -laOu8c'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+# todo.txt
 alias t='~/src/todo.txt-cli/todo.sh -a -t'
+# tmux と libevent を繋ぐalias
+alias tmux=LD_LIBRARY_PATH=/usr/local/lib\ /usr/local/bin/tmux
 
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
 
