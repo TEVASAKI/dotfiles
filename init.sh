@@ -1,37 +1,67 @@
 #!/bin/sh
 
-##  dotfiles をclone した後にやることは以下の通り
-##  1. submodule を読み込む
-##  2. 各設定ファイルにシンボリックリンクを貼る
-##  3. vundle で各プラグインを取得
-##  http://yono05.wordpress.com/2011/12/11/zshscreenvim-%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92-dropbox-github-%E3%81%A7%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B/
+#----------------------------------------------------------------------
+# 初期設定
+#----------------------------------------------------------------------
+# root password Edit
+passwd
 
-DROPBOX_DIR="$HOME/Dropbox"
-DOTFILES="$DROPBOX_DIR/dotfiles"
+# User add
+useradd teva
 
-if [ ! -d "$DOTFILES" ]
-then
-    echo "Please mv dotfiles to $DROPBOX_DIR"
-    exit
-fi
+# User password Delete
+passwd -d teva
 
-cd $DOTFILES
+# Wheel グループに所属させる
+usermod -G wheel teva
 
-#git submodule update --init
+# Don't foget this todo!!
+# teva にログインして、パスワードを設定
+#su teva
+#passwd
 
-ln -s $DOTFILES/zshrc $HOME/.zshrc
-ln -s $DOTFILES/zsh_history $HOME/.zsh_history
-#
-ln -s $DOTFILES/bashrc $HOME/.bashrc
-ln -s $DOTFILES/bash_profile $HOME/.bash_profile
-ln -s $DOTFILES/bash_logout $HOME/.bash_logout
-ln -s $DOTFILES/bash_history $HOME/.bash_history
-#
-ln -s $DOTFILES/gitconfig $HOME/.gitconfig
-#
-ln -s $DOTFILES/inputrc $HOME/.inputrc
-ln -s $DOTFILES/vimrc $HOME/.vimrc
+#----------------------------------------------------------------------
+# RPM forge add
+#----------------------------------------------------------------------
+mkdir src
+cd src
+wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 
-vi -c ':NeoBundleInstall!'
+# 他リポジトリとのパッケージ競合を避けるため、enabled=0として普段は読まないようにしておく
+sed -i -e s/enabled = 1/enabled = 0/g /etc/yum.repos.d/rpmforge.repo
 
+#----------------------------------------------------------------------
+# EPEL add
+#----------------------------------------------------------------------
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+
+# 他リポジトリとのパッケージ競合を避けるため、enabled=0として普段は読まないようにしておく
+sed -i -e s/enabled=1/enabled=0/g /etc/yum.repos.d/epel.repo
+
+## system UPDATE
+yum update
+
+
+#----------------------------------------------------------------------
+# Package install
+#----------------------------------------------------------------------
+# 開発ツール
+yum group install 'Development tools'
+
+# 必須的な
+yum install wget manpages-ja.noarch man.x86_64 
+
+# vim用
+yum install mercurial ncurses-devel
+
+# lv のインストール
+wget http://vault.centos.org/5.7/os/SRPMS/lv-4.51-8.1.src.rpm
+rpm -ivh lv-4.51-8.1.src.rpm
+rpmbuild -bb /root/rpmbuild/SPECS/lv.spec
+rpm -ivh /root/rpmbuild/RPMS/x86_64/lv-4.51-8.1.x86_64.rpm
+
+# Git用
+yum install perl-ExtUtils-MakeMaker.x86_64 libcurl-devel.x86_64
 
