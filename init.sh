@@ -54,7 +54,7 @@ yum update
 yum group install 'Development tools'
 
 # 必須的な
-yum install wget manpages-ja.noarch man.x86_64 
+yum install wget manpages-ja.noarch man.x86_64 zsh.x86_64
 
 # vim用
 yum install mercurial ncurses-devel
