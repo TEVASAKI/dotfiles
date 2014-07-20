@@ -21,14 +21,15 @@
 ":set enc=utf-8
 :set encoding=utf-8
 :set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
-""""""""""""""""""""""""""""""""""""""""""
 "-----------------------------------------------------------------------------------------------------
 " 基本
 "-----------------------------------------------------------------------------------------------------
 " 強制前保存終了を無効化
 nnoremap  ZZ  <Nop>
+
 " line number display
 set number
+
 " syntax highlighting
 syntax		on
 
@@ -40,6 +41,7 @@ set backspace=eol,indent,start
 
 " 検索における大文字小文字の無視
 set ignorecase
+
 " その上で検索における大文字小文字の区別の改善
 set smartcase
 " | 小文字 | 大文字 | パターン例 | 大小文字の区別 |
@@ -147,14 +149,14 @@ if has("autocmd")
   " これらのfiletypeではインデントを無効に
   " autocmd FileType php filetype indent off
 
-  autocmd FileType apache	setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType c	  	setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType apache	setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType c	  	setlocal sw=2 sts=2 ts=2 et
   autocmd FileType css		setlocal sw=2 sts=2 ts=2 et
   autocmd FileType html		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java		setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType php		setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType java		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType php		setlocal sw=2 sts=2 ts=2 et
   autocmd FileType ruby		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh	  	setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sh	  	setlocal sw=2 sts=2 ts=2 et
   autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
 endif
 
@@ -186,6 +188,7 @@ NeoBundleFetch 'Shougo/NeoBundle.vim'
 
 " 今後はここ以降にPluginsを追記していく。
 " original repos on github
+" 非同期プラグインのvimproc のダウンロードとコンパイル
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
   \   'mac' : 'make -f make_mac.mac',
