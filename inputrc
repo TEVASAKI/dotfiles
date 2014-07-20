@@ -1,10 +1,11 @@
-# チルダをタブにより展開
+# Expand the tab tilde
 set expand-tilde  on
 
-# タブ補完時、大文字小文字無視
+# Tab completion at the time,
+# I ignore upper and lower case letters.
 set completion-ignore-case  on
 
-# 日本語関係
+# Japanese relationship
 set convert-meta  off
 set meta-flag     on
 set output-meta   on
