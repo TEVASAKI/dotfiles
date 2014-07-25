@@ -161,6 +161,13 @@ if has("autocmd")
 endif
 
 "-----------------------------------------------------------------------------------------------------
+" FileType.
+"-----------------------------------------------------------------------------------------------------
+" *.mkd だけでなく、*,md もMarkdown 形式と扱う
+au  BufRead,BufNewFile *.md set filetype=markdown
+
+
+"-----------------------------------------------------------------------------------------------------
 " Start NeoBundle Settings.
 "-----------------------------------------------------------------------------------------------------
 " vi 互換モード
@@ -186,9 +193,9 @@ call neobundle#rc(expand('$VIMDIR/bundle'))
 NeoBundleFetch 'Shougo/NeoBundle.vim'
 
 
-" 今後はここ以降にPluginsを追記していく。
+" ### 今後はここ以降にPluginsを追記していく。
 " original repos on github
-" 非同期プラグインのvimproc のダウンロードとコンパイル
+" # 非同期プラグインのvimproc のダウンロードとコンパイル
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
   \   'mac' : 'make -f make_mac.mac',
@@ -198,19 +205,28 @@ NeoBundle 'Shougo/vimproc', {
 " windows は自分でコンパイルする事にするー
 "  \   'windows' : 'make -f make_mingw32.mak',
 "  \   'cygwin' : 'make -f make_cygwin.mak',
-"
-NeoBundle 'tpope/vim-surround'    " HTMLタグなど、囲まれているもの の編集補助
 
-NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシャレに
+
+" # HTMLタグなど、囲まれているもの の編集補助
+NeoBundle 'tpope/vim-surround'    
+
+" # ステータスライン表示をオシャレに
+NeoBundle 'itchyny/lightline.vim'    
   "let g:lightline = { 'colorscheme':  'landscape', }
   "set laststatus=2
 
-NeoBundle 'tpope/vim-markdown'
+" # 
+NeoBundle 'plasticboy/vim-markdown'
+
+" # Markdown, textfile のリアルタイムプレビュー
+" :PrevimOpen を実行してブラウザで開くのです。
+NeoBundle 'kannokanno/previm'
+
+" # 
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'thinca/vim-quickrun'
 
-
-" NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
+" # 幅跳び。
+" NeoBundle 'mattn/habatobi-vim'    
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、
