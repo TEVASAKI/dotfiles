@@ -205,6 +205,11 @@ NeoBundle 'itchyny/lightline.vim'    " ステータスライン表示をオシ�
   "let g:lightline = { 'colorscheme':  'landscape', }
   "set laststatus=2
 
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'thinca/vim-quickrun'
+
+
 " NeoBundle 'mattn/habatobi-vim'    " 幅跳び。
 
 
