@@ -215,7 +215,10 @@ NeoBundle 'plasticboy/vim-markdown'
 " # vim上で簡単に Compile & Run!
 "   <\-r> で実行、らしい。
 NeoBundle 'thinca/vim-quickrun'
-
+" 垂直分割
+let g:quickrun_config={'*': {'split': 'vertical'}}
+" 水平分割
+"let g:quickrun_config={'*': {'split': ''}}
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、
