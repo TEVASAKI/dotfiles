@@ -161,8 +161,17 @@ if has("autocmd")
 endif
 
 "-----------------------------------------------------------------------------------------------------
-" FileType.
+" Chrome で Markdown Preview @Markdown Preview Plus .
 "-----------------------------------------------------------------------------------------------------
+command! MkdChrome call MkdChrome()
+function! MkdChrome()
+if has('win32') || has('win64')
+  set shellslash
+  call system('D:\Home\Tool\Comodo\Dragon\dragon.exe ' . expand('%'))
+else
+  call system('chromium-browser ' . expand('%'))
+endif
+endfunction
 
 
 "-----------------------------------------------------------------------------------------------------
@@ -218,12 +227,30 @@ NeoBundle 'plasticboy/vim-markdown'
 
 " # Markdown, textfile のリアルタイムプレビュー
 " :PrevimOpen を実行してブラウザで開くのです。
-NeoBundle 'kannokanno/previm'
-" *.mkd だけでなく、*,md もMarkdown 形式と扱う
-augroup PrevimSetting
-  autocmd!
-  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+"NeoBundle 'kannokanno/previm'
+" Previm setting 1
+" augroup PrevimSettings
+"   autocmd!
+"   "autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+"   autocmd BufNewFile,BufRead *.md set filetype=markdown
+" augroup END
+
+" Previm setting 2
+"autocmd MyAutoGroup BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+"autocmd MyAutoGroup FileType markdown hi! def link markdownItalic LineNr
+
+" Previm setting 3
+" *.mkd だけでなく、md,mdwn,mkd,mkdn,mark* もMarkdown 形式と扱う
+" autocmd BufNewFile,BufRead <em>.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+" " Previm setting
+" let g:previm_open_cmd = ''
+" nnoremap [previm] <Nop>
+" nmap <Space>p [previm]
+" nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
+" nnoremap <silent> [previm]r :call previm#refresh()<CR>
+
+" PrevimSettings 4
+"au BufRead,BufNewfile *.md set filetype=markdown
 
 
 " # 名前の通り、ブラウザでプレビュー 
