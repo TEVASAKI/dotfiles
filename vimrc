@@ -160,19 +160,6 @@ if has("autocmd")
   autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
 endif
 
-"-----------------------------------------------------------------------------------------------------
-" Chrome で Markdown Preview @Markdown Preview Plus .
-"-----------------------------------------------------------------------------------------------------
-command! MkdChrome call MkdChrome()
-function! MkdChrome()
-if has('win32') || has('win64')
-  set shellslash
-  call system('D:\Home\Tool\Comodo\Dragon\dragon.exe ' . expand('%'))
-else
-  call system('chromium-browser ' . expand('%'))
-endif
-endfunction
-
 
 "-----------------------------------------------------------------------------------------------------
 " Start NeoBundle Settings.
@@ -225,6 +212,40 @@ NeoBundle 'itchyny/lightline.vim'
 " # Syntax highlighting, matching rules and mappings for the original Markdown and extensions. 
 NeoBundle 'plasticboy/vim-markdown'
 
+" # vim上で簡単に Compile & Run!
+"   <\-r> で実行、らしい。
+NeoBundle 'thinca/vim-quickrun'
+
+
+
+" 読み込んだPluginsを含め、ファイルタイプの検出、
+" ファイルタイプ別プラグイン/インデントを有効化する。
+filetype plugin   on
+filetype indent   on
+
+" Install Check.
+NeoBundleCheck
+"-----------------------------------------------------------------------------------------------------
+" End NeoBundle Settings.
+"-----------------------------------------------------------------------------------------------------
+
+"-----------------------------------------------------------------------------------------------------
+" OMIT settings,,,
+"-----------------------------------------------------------------------------------------------------
+"-----------------------------------------------------------------------------------------------------
+" Chrome で Markdown Preview @Markdown Preview Plus .
+"-----------------------------------------------------------------------------------------------------
+" command! MkdChrome call MkdChrome()
+" function! MkdChrome()
+" if has('win32') || has('win64')
+"   set shellslash
+"   call system('D:\Home\Tool\Comodo\Dragon\dragon.exe ' . expand('%'))
+" else
+"   call system('chromium-browser ' . expand('%'))
+" endif
+" endfunction
+
+
 " # Markdown, textfile のリアルタイムプレビュー
 " :PrevimOpen を実行してブラウザで開くのです。
 "NeoBundle 'kannokanno/previm'
@@ -261,16 +282,3 @@ NeoBundle 'plasticboy/vim-markdown'
 
 " # 幅跳び。
 " NeoBundle 'mattn/habatobi-vim'    
-
-
-" 読み込んだPluginsを含め、ファイルタイプの検出、
-" ファイルタイプ別プラグイン/インデントを有効化する。
-filetype plugin   on
-filetype indent   on
-
-" Install Check.
-NeoBundleCheck
-"-----------------------------------------------------------------------------------------------------
-" End NeoBundle Settings.
-"-----------------------------------------------------------------------------------------------------
-"
