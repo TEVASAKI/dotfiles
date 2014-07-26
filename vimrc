@@ -210,7 +210,7 @@ NeoBundle 'Shougo/vimproc', {
   \   },
   \ }
 " windows は自分でコンパイルする事にするー
-"  \   'windows' : 'make -f make_mingw32.mak',
+"  \   'windows' : ' x86_64-w64-mingw32-gcc.exe -f make_mingw32.mak',
 "  \   'cygwin' : 'make -f make_cygwin.mak',
 
 
@@ -231,8 +231,8 @@ NeoBundle 'plasticboy/vim-markdown'
 " Previm setting 1
 " augroup PrevimSettings
 "   autocmd!
-"   "autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-"   autocmd BufNewFile,BufRead *.md set filetype=markdown
+"   autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} :set filetype=markdown
+"   "autocmd BufNewFile,BufRead *.md set filetype=markdown
 " augroup END
 
 " Previm setting 2
@@ -250,11 +250,11 @@ NeoBundle 'plasticboy/vim-markdown'
 " nnoremap <silent> [previm]r :call previm#refresh()<CR>
 
 " PrevimSettings 4
-"au BufRead,BufNewfile *.md set filetype=markdown
+"au BufRead,BufNewfile *.md :set filetype=markdown
 
 
 " # 名前の通り、ブラウザでプレビュー 
-NeoBundle 'tyru/open-browser.vim'
+"NeoBundle 'tyru/open-browser.vim'
 
 " # Vim-shell
 "NeoBundle 'Shougo/vimshell.vim'
