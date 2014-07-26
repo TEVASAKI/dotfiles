@@ -163,8 +163,6 @@ endif
 "-----------------------------------------------------------------------------------------------------
 " FileType.
 "-----------------------------------------------------------------------------------------------------
-" *.mkd だけでなく、*,md もMarkdown 形式と扱う
-au  BufRead,BufNewFile *.md set filetype=markdown
 
 
 "-----------------------------------------------------------------------------------------------------
@@ -215,15 +213,24 @@ NeoBundle 'itchyny/lightline.vim'
   "let g:lightline = { 'colorscheme':  'landscape', }
   "set laststatus=2
 
-" # 
+" # Syntax highlighting, matching rules and mappings for the original Markdown and extensions. 
 NeoBundle 'plasticboy/vim-markdown'
 
 " # Markdown, textfile のリアルタイムプレビュー
 " :PrevimOpen を実行してブラウザで開くのです。
 NeoBundle 'kannokanno/previm'
+" *.mkd だけでなく、*,md もMarkdown 形式と扱う
+augroup PrevimSetting
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
-" # 
+
+" # 名前の通り、ブラウザでプレビュー 
 NeoBundle 'tyru/open-browser.vim'
+
+" # Vim-shell
+"NeoBundle 'Shougo/vimshell.vim'
 
 " # 幅跳び。
 " NeoBundle 'mattn/habatobi-vim'    
