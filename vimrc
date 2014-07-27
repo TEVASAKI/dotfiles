@@ -57,7 +57,7 @@ set smartcase
 " そして検索結果のハイライトをさり気なく消す。
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
-nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+" nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
 " vim-hier のハイライト削除
 "nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
@@ -223,11 +223,16 @@ NeoBundle 'tyru/open-browser.vim'
 
 " # vim上で簡単に Compile & Run!
 "   <\-r> で実行、らしい。
-"NeoBundle 'thinca/vim-quickrun'
-" 垂直分割
-"let g:quickrun_config={'*': {'split': 'vertical'}}
-" 水平分割
-"let g:quickrun_config={'*': {'split': ''}}
+if has('unix') 
+  NeoBundle 'thinca/vim-quickrun'
+  "autocmd InsertEnter *   set shellslash
+  "autocmd InsertLeave *   set noshellslash
+  " 垂直分割
+  "let g:quickrun_config={'*': {'split': 'vertical'}}
+  " 水平分割
+  let g:quickrun_config={'*': {'split': ''}}
+  set splitbelow
+endif
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、
