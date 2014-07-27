@@ -197,7 +197,7 @@ NeoBundle 'Shougo/vimproc', {
   \   },
   \ }
 " windows は自分でコンパイルする事にするー
-"  \   'windows' : ' x86_64-w64-mingw32-gcc.exe -f make_mingw32.mak',
+"  \   'windows' : 'x86_64-w64-mingw32-gcc.exe -f make_mingw32.mak',
 "  \   'cygwin' : 'make -f make_cygwin.mak',
 
 
@@ -209,14 +209,23 @@ NeoBundle 'itchyny/lightline.vim'
   "let g:lightline = { 'colorscheme':  'landscape', }
   "set laststatus=2
 
-" # Syntax highlighting, matching rules and mappings for the original Markdown and extensions. 
-NeoBundle 'plasticboy/vim-markdown'
+" # Markdown, textfile のリアルタイムプレビュー
+" :PrevimOpen を実行してブラウザで開くのです。
+NeoBundle 'kannokanno/previm'
+" Previm setting 1
+augroup PrevimSettings
+  autocmd!
+  autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+" # 名前の通り、ブラウザでプレビュー 
+NeoBundle 'tyru/open-browser.vim'
 
 " # vim上で簡単に Compile & Run!
 "   <\-r> で実行、らしい。
-NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'thinca/vim-quickrun'
 " 垂直分割
-let g:quickrun_config={'*': {'split': 'vertical'}}
+"let g:quickrun_config={'*': {'split': 'vertical'}}
 " 水平分割
 "let g:quickrun_config={'*': {'split': ''}}
 
@@ -249,16 +258,6 @@ NeoBundleCheck
 " endfunction
 
 
-" # Markdown, textfile のリアルタイムプレビュー
-" :PrevimOpen を実行してブラウザで開くのです。
-"NeoBundle 'kannokanno/previm'
-" Previm setting 1
-" augroup PrevimSettings
-"   autocmd!
-"   autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} :set filetype=markdown
-"   "autocmd BufNewFile,BufRead *.md set filetype=markdown
-" augroup END
-
 " Previm setting 2
 "autocmd MyAutoGroup BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 "autocmd MyAutoGroup FileType markdown hi! def link markdownItalic LineNr
@@ -277,8 +276,9 @@ NeoBundleCheck
 "au BufRead,BufNewfile *.md :set filetype=markdown
 
 
-" # 名前の通り、ブラウザでプレビュー 
-"NeoBundle 'tyru/open-browser.vim'
+" # Syntax highlighting, matching rules and mappings for the original Markdown and extensions. 
+" 原因これだーーーーー　これが*.mkd 形式で読み込んでしまうからバグるんだーーー
+"NeoBundle 'plasticboy/vim-markdown'
 
 " # Vim-shell
 "NeoBundle 'Shougo/vimshell.vim'
