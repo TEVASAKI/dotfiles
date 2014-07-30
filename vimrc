@@ -24,14 +24,22 @@
 "-----------------------------------------------------------------------------------------------------
 " 基本
 "-----------------------------------------------------------------------------------------------------
+" Toolbarの非表示
+set guioptions-=T
+
 " 強制前保存終了を無効化
 nnoremap  ZZ  <Nop>
 
 " line number display
 set number
+" 相対行表示
+set rnu!
 
 " syntax highlighting
 syntax		on
+
+" Disable Beep
+set visualbell t_vb=
 
 " Backspace の挙動を改善する。
 " eol: 改行文字の削除を許可する
