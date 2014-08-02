@@ -1,0 +1,13 @@
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone git@github.com:mirrors/gcc.git
+git clone git://gitorious.org/qt/qt5.git qt5
+git clone git@github.com:GNOME/glib.git
+git clone git://git.code.sf.net/p/zsh/code zsh
+git clone git://git.code.sf.net/p/tmux/tmux-code tmux
+git clone git://tmux.git.sourceforge.net/gitroot/tmux/tmux tmux
+git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
+git clone git@github.com:ginatrapani/todo.txt-cli.git
+git clone git@github.com:libevent/libevent.git
+git clone git://git.code.sf.net/p/yodl/code yodl
+git clone git://git.code.sf.net/p/icmake/code icmake
+git clone git@github.com:ggreer/the_silver_searcher.git the_silver_searcher
