@@ -11,3 +11,5 @@ git clone git@github.com:libevent/libevent.git
 git clone git://git.code.sf.net/p/yodl/code yodl
 git clone git://git.code.sf.net/p/icmake/code icmake
 git clone git@github.com:ggreer/the_silver_searcher.git the_silver_searcher
+hg clone https://vim.googlecode.com/hg/ vim
+
