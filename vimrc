@@ -39,7 +39,8 @@ set rnu!
 syntax		on
 
 " Disable Beep
-set visualbell t_vb=
+set noerrorbells
+set vb t_vb=
 
 " Backspace の挙動を改善する。
 " eol: 改行文字の削除を許可する
@@ -65,7 +66,7 @@ set smartcase
 " そして検索結果のハイライトをさり気なく消す。
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
-" nmap  <Esc><Esc>  :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc>  :<C-u>nohlsearch<CR>
 " vim-hier のハイライト削除
 "nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
