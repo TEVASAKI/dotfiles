@@ -104,6 +104,11 @@ set backup
 set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
 
+" undo ファイルの出力先を一箇所にまとめる(Kaoriya版対応
+if has('win32') || has('win64')
+  set undodir=D:\Home\Tool\vim74-kaoriya-win64\undo-files
+endif
+
 " Ctrl + n / p の配色設定
 " hi  Pmenu ctermbg=4
 " hi  Pmenusel ctermbg=1
