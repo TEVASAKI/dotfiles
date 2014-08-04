@@ -30,6 +30,9 @@ set guioptions-=T
 " 強制前保存終了を無効化
 nnoremap  ZZ  <Nop>
 
+" スクロール時の余白確保
+set scrolloff=7
+
 " line number display
 set number
 " 相対行表示
