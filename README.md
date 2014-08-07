@@ -5,12 +5,12 @@ Clone from gitHub
 
 # Dropbox install
 
-### Dropbox –{‘Ì‚ğ Home‚ÉDownload ‚µ‚Ä“WŠJ‚µ‚ÄƒAƒJƒEƒ“ƒg•R•t‚¯
+### Dropbox æœ¬ä½“ã‚’ Homeã«Download ã—ã¦å±•é–‹ã—ã¦ã‚¢ã‚«ã‚¦ãƒ³ãƒˆç´ä»˜ã‘
     $ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
     
     $ tar zxvf dropbox-lnx.x86.tar.gz
     
-    $ ~/.dropbox-dist/dropboxd
+    $ â€¾/.dropbox-dist/dropboxd
 
 **log**
 
@@ -20,7 +20,7 @@ Client successfully linked, Welcome tevasaki!
 ^C  
 
 
-### ŠÇ—ƒXƒNƒŠƒvƒg‚ğDownload‚µ‚ÄÀsŒ ŒÀ‚ğ•t‚¯‚ÄÀsƒpƒX‚Ì’Ê‚Á‚½êŠ‚É”z’u
+### ç®¡ç†ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’Downloadã—ã¦å®Ÿè¡Œæ¨©é™ã‚’ä»˜ã‘ã¦å®Ÿè¡Œãƒ‘ã‚¹ã®é€šã£ãŸå ´æ‰€ã«é…ç½®
     $ wget -O dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
     
     $ chmod 700 dropbox.py
@@ -40,32 +40,32 @@ Downloading Dropbox... 100%
 Unpacking Dropbox... 100%  
 Done!  
 
-### status ƒIƒvƒVƒ‡ƒ“‚Å“¯Šú‚³‚ê‚Ä‚¢‚é‚©Šm”F
+### status ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§åŒæœŸã•ã‚Œã¦ã„ã‚‹ã‹ç¢ºèª
 `$ dropbox status`  
 Idle
 
-### “¯ŠúœŠO‚µ‚½‚¢ƒtƒHƒ‹ƒ_‚ğ“o˜^
-`$ dropbox exclude add ~/Dropbox/Photos/`
+### åŒæœŸé™¤å¤–ã—ãŸã„ãƒ•ã‚©ãƒ«ãƒ€ã‚’ç™»éŒ²
+`$ dropbox exclude add â€¾/Dropbox/Photos/`
 
 Excluded:  
 photos  
  
-`$ dropbox exclude add ~/Dropbox/public/`
+`$ dropbox exclude add â€¾/Dropbox/public/`
 
 Excluded:  
 public  
  
-`$ dropbox exclude add ~/Dropbox/share/`
+`$ dropbox exclude add â€¾/Dropbox/share/`
 
 Excluded:  
 share  
  
-`$ dropbox exclude add ~/Dropbox/tool/`
+`$ dropbox exclude add â€¾/Dropbox/tool/`
 
 Excluded:  
 tool  
 
-### œŠO‚³‚ê‚Ä‚¢‚é‚©‚ğŠm”F
+### é™¤å¤–ã•ã‚Œã¦ã„ã‚‹ã‹ã‚’ç¢ºèª
 `$ dropbox exclude list`
 
 **log**
@@ -75,7 +75,7 @@ public
 share  
 tool  
 
-### dropbox.py ‚ÌƒIƒvƒVƒ‡ƒ“ˆê——
+### dropbox.py ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä¸€è¦§
 `$ Dropbox --help`
 
 Dropbox command-line interface  
