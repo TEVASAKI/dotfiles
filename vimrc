@@ -133,6 +133,16 @@ nnoremap <Space>.   :<C-u>edit $MYVIMRC<CR>
 " Space + s . で、vimrc をリロード
 nnoremap <Space>s.  :<C-u>source $MYVIMRC<CR>
 
+" クリップボードを有効にする
+if has("clipboard")
+  vmap ,y "+y
+  nmap ,p "+gp
+  if has("gui_running") || has("xterm_clipboard")
+    silent! set clipboard^=unnamedplus
+    set clipboard^=unnamed
+  endif
+endif
+
 "-----------------------------------------------------------------------------------------------------
 " Indent
 "-----------------------------------------------------------------------------------------------------
