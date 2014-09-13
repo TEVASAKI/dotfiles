@@ -1,3 +1,6 @@
+# もうちょっとマシな書き方があるんじゃないかとモヤモヤしながらも
+# 分かる範囲でとにかくやってみている日々。
+
 Clone from gitHub
 
     git clone git@github.com:TEVASAKI/dotfiles.git
