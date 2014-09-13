@@ -3,6 +3,7 @@ git pull
 ./configure
 make clean
 make -j 4
-su -
-A
+#su -
+sudo paco -D make install
+
 

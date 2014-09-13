@@ -158,7 +158,9 @@ set autoindent
 set paste
 
 " Cソースの自動インデントを始める
-set cindent
+" smartindent はcindent かindentexpr が有効な時は意味が無い
+" :help smartindent
+"set cindent
 
 " 連続インデント(謎
 " ビジュアルモードで<- -> キーによるインデント後にビジュアルモードが解除されないようにする
@@ -189,7 +191,10 @@ endif
 " Start NeoBundle Settings.
 "------------------------------------------------------------------------------------------
 " vi 互換モード
-set nocompatible
+" 不要。
+" 規定ではオン、vimrc か gvimrc が発見されたらオフ。
+" つまり、vimrc を書いた時点で nocompatibleになるのである。
+"set nocompatible
 
 " NeoBundle environment
 if has('win32') || has('win64')
