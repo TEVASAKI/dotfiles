@@ -1,7 +1,14 @@
 #!/bin/sh
-git pull
-./configure --prefix=/usr/local && 
-make clean && 
-make -j 4 &&
-su -
+
+## bdwgc
+
+# run with CHECK.sh
+source ./CHECK.sh
+
+CHECK git pull
+CHECK ./configure --prefix=/usr/local
+CHECK make clean
+CHECK make -j 4
+#su -
+CHECK sudo paco -lD make install
 

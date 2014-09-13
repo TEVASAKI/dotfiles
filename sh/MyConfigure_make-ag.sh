@@ -1,13 +1,16 @@
 #!/bin/sh
 
+## ag
+## (The Silver Searcher)
+
 # run with CHECK.sh
-source /home/teva/Dropbox/dotfiles/sh/CHECK.sh
+source ./CHECK.sh
 
 CHECK git pull
 CHECK ./configure
 CHECK make clean
 CHECK make -j 4
 #su -
-CHECK sudo -u teva paco -D make install
+CHECK sudo paco -lD make install
 
 

@@ -65,8 +65,8 @@ alias t='~/src/todo.txt-cli/todo.sh -a -t'
 # tmux と libevent を繋ぐalias
 alias tmux=LD_LIBRARY_PATH=/usr/local/lib\ /usr/local/bin/tmux
 # sudo にenvPATHを引き継ぐ
-export PATH=/usr/local/bin:$PATH
-alias sudo='sudo PATH=$PATH'
+# export PATH=/usr/local/bin:$PATH
+# alias sudo='sudo env PATH=$PATH'
 
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include # 設定ファイルのinclude
 

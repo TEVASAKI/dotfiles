@@ -1,0 +1,74 @@
+---------- OS ----------
+CentOS release 6.5 (Final)
+Linux centos6.5.XG41 2.6.32-431.23.3.el6.x86_64 #1 SMP Thu Jul 31 17:20:51 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+---------- CPU ----------
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+コアあたりのスレッド数:1
+ソケットあたりのコア数:1
+Socket(s):             2
+NUMAノード:         1
+ベンダーID:        GenuineIntel
+CPUファミリー:    6
+モデル:             58
+ステッピング:    9
+CPU MHz:               3291.749
+BogoMIPS:              6583.49
+ハイパーバイザーベンダー:VMware
+仮想化タイプ:    完全仮想化
+L1d キャッシュ:   32K
+L1i キャッシュ:   32K
+L2 キャッシュ:    256K
+L3 キャッシュ:    6144K
+NUMA node0 CPU(s):     0,1
+---------- git ----------
+git version 2.1.0
+---------- Vim ----------
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Sep 13 2014 23:53:40)
+適用済パッチ: 1-443
+Compiled by teva@centos6.5.XG41
+Huge 版 without GUI.  機能の一覧 有効(+)/無効(-)
++acl             +farsi           +mouse_netterm   +syntax
++arabic          +file_in_path    +mouse_sgr       +tag_binary
++autocmd         +find_in_path    -mouse_sysmouse  +tag_old_static
+-balloon_eval    +float           +mouse_urxvt     -tag_any_white
+-browse          +folding         +mouse_xterm     -tcl
+++builtin_terms  -footer          +multi_byte      +terminfo
++byte_offset     +fork()          +multi_lang      +termresponse
++cindent         +gettext         -mzscheme        +textobjects
+-clientserver    -hangul_input    +netbeans_intg   +title
+-clipboard       +iconv           +path_extra      -toolbar
++cmdline_compl   +insert_expand   -perl            +user_commands
++cmdline_hist    +jumplist        +persistent_undo +vertsplit
++cmdline_info    +keymap          +postscript      +virtualedit
++comments        +langmap         +printer         +visual
++conceal         +libcall         +profile         +visualextra
++cryptv          +linebreak       -python          +viminfo
++cscope          +lispindent      -python3         +vreplace
++cursorbind      +listcmds        +quickfix        +wildignore
++cursorshape     +localmap        +reltime         +wildmenu
++dialog_con      -lua             +rightleft       +windows
++diff            +menu            -ruby            +writebackup
++digraphs        +mksession       +scrollbind      -X11
+-dnd             +modify_fname    +signs           -xfontset
+-ebcdic          +mouse           +smartindent     -xim
++emacs_tags      -mouseshape      -sniff           -xsmp
++eval            +mouse_dec       +startuptime     -xterm_clipboard
++ex_extra        -mouse_gpm       +statusline      -xterm_save
++extra_search    -mouse_jsbterm   -sun_workshop    -xpm
+      システム vimrc: "$VIM/vimrc"
+        ユーザ vimrc: "$HOME/.vimrc"
+     第2ユーザ vimrc: "~/.vim/vimrc"
+         ユーザ exrc: "$HOME/.exrc"
+       省略時の $VIM: "/usr/local/share/vim"
+コンパイル: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1      
+リンク: gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -ldl          
+---------- Curl ----------
+curl 7.38.1-DEV (x86_64-unknown-linux-gnu) libcurl/7.38.1-DEV OpenSSL/1.0.1e zlib/1.2.3 libidn/1.18
+Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp smtp smtps telnet tftp 
+Features: IDN IPv6 Largefile NTLM NTLM_WB SSL libz 
+---------- tmux ----------
+tmux 2.0
