@@ -68,3 +68,15 @@ rpm -ivh /root/rpmbuild/RPMS/x86_64/lv-4.51-8.1.x86_64.rpm
 # Git用
 yum install perl-ExtUtils-MakeMaker.x86_64 libcurl-devel.x86_64
 
+# paco
+readonly WORK_PACO_TMPDIR="/tmp/work/paco"
+mkdir -p $WORK_PACO_TMPDIR
+cd $WORK_PACO_TMPDIR
+wget http://sourceforge.net/projects/paco/files/paco/2.0.9/paco-2.0.9.tar.gz
+tar zxvf paco-2.0.9.tar.gz
+cd paco-2.0.9
+./configure --prefix=/usr/local --disable=gpaco
+make -j 4
+make install
+make logme
+  

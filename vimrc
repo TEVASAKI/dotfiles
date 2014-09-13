@@ -40,6 +40,7 @@ syntax		on
 
 " Disable Beep
 set noerrorbells
+set novisualbell
 set vb t_vb=
 
 " Backspace の挙動を改善する。
