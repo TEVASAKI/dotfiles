@@ -75,7 +75,7 @@ cd $WORK_PACO_TMPDIR
 wget http://sourceforge.net/projects/paco/files/paco/2.0.9/paco-2.0.9.tar.gz
 tar zxvf paco-2.0.9.tar.gz
 cd paco-2.0.9
-./configure --prefix=/usr/local --disable=gpaco
+./configure --prefix=/usr/local --disable-gpaco
 make -j 4
 make install
 make logme
