@@ -227,7 +227,7 @@ NeoBundle 'Shougo/vimproc', {
   \   },
   \ }
 " windows は自分でコンパイルする事にするー
-"  \   'windows' : 'x86_64-w64-mingw32-gcc.exe -f make_mingw32.mak',
+"  \   'windows' : 'mingw32-make.exe -f make_mingw64.mak',
 "  \   'cygwin' : 'make -f make_cygwin.mak',
 
 
@@ -312,6 +312,9 @@ if has('unix')
   NeoBundle 'yuratomo/w3m.vim'
 
 endif
+
+" Simplenote
+"NeoBundle 'mattn/vim-metarw'
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、
