@@ -7,7 +7,7 @@ source ./CHECK.sh
 
 CHECK hg pull
 CHECK hg update
-CHECK ./configure --enable-multibyte --with-features=huge --disable-selinux --prefix=/usr/local --srcdir=. --cache-file=auto --srcdir=. --cache-file=auto/config.cache --enable-gui
+CHECK ./configure --enable-multibyte --with-features=huge --disable-selinux --prefix=/usr/local --srcdir=. --srcdir=. --enable-gui=auto --enable-python3interp=dynamic --enable-pythoninterp=dynamic --enable-perlinterp=dynamic
 CHECK make clean 
 CHECK make -j 4 
 #su -
