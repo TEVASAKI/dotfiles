@@ -314,7 +314,9 @@ if has('unix')
 endif
 
 " Simplenote
-"NeoBundle 'mattn/vim-metarw'
+NeoBundle 'mrtazz/simplenote.vim'
+" login 情報は別ファイル
+source $VIMDIR/bundle/simplenote.vim/simplenoterc
 
 
 " 読み込んだPluginsを含め、ファイルタイプの検出、
