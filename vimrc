@@ -36,7 +36,11 @@ set number
 set rnu!
 
 " syntax highlighting
-syntax		on
+syntax    on
+
+" Tab , 行末の半角スペースを明示的に表示
+set list
+set listchars=tab:>-,trail:~
 
 " Backspace の挙動を改善する。
 " eol: 改行文字の削除を許可する
@@ -176,15 +180,15 @@ if has("autocmd")
   " これらのfiletypeではインデントを無効に
   " autocmd FileType php filetype indent off
 
-  autocmd FileType apache	setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType c	  	setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType css		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType php		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType ruby		setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh	  	setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType vim		setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
 endif
 
 
