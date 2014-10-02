@@ -325,6 +325,8 @@ if v:version > 703
   " # Simplenote
   NeoBundle 'mrtazz/simplenote.vim'
   " login 情報は別ファイル
+  " let g:SimplenoteUsername = "xxxx"
+  " let g:SimplenotePassword = "yyyy"
   source $VIMDIR/bundle/simplenote.vim/simplenoterc
 
 
