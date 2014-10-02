@@ -38,10 +38,6 @@ set rnu!
 " syntax highlighting
 syntax		on
 
-" Disable Beep
-set noerrorbells
-set vb t_vb=
-
 " Backspace の挙動を改善する。
 " eol: 改行文字の削除を許可する
 " indent: 自動インデントが行われた場合、インデント部分の削除を許可する
@@ -67,7 +63,11 @@ set smartcase
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nnoremap <Esc><Esc>  :<C-u>nohlsearch<CR>
+" Disable Beep
 set novisualbell
+set noerrorbells
+set vb t_vb=
+
 " vim-hier のハイライト削除
 "nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
