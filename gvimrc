@@ -42,3 +42,10 @@ if filereadable(g:save_window_file)
   execute 'source' g:save_window_file
 endif
 
+"---------------------------------------------------------------------------
+" Disable Beep
+"---------------------------------------------------------------------------
+set novisualbell
+set noerrorbells
+set vb t_vb=
+
