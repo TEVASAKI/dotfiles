@@ -40,7 +40,6 @@ syntax		on
 
 " Disable Beep
 set noerrorbells
-set novisualbell
 set vb t_vb=
 
 " Backspace の挙動を改善する。
@@ -68,6 +67,7 @@ set smartcase
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nnoremap <Esc><Esc>  :<C-u>nohlsearch<CR>
+set novisualbell
 " vim-hier のハイライト削除
 "nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
 
@@ -221,11 +221,11 @@ NeoBundleFetch 'Shougo/NeoBundle.vim'
 " original repos on github
 " # 非同期プラグインのvimproc のダウンロードとコンパイル
 NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-  \   'mac' : 'make -f make_mac.mac',
-  \   'unix' : 'make -f make_unix.mak',
-  \   },
-  \ }
+      \ 'build' : {
+      \   'mac' : 'make -f make_mac.mac',
+      \   'unix' : 'make -f make_unix.mak',
+      \   },
+      \ }
 " windows は自分でコンパイルする事にするー
 "  \   'windows' : 'mingw32-make.exe -f make_mingw64.mak',
 "  \   'cygwin' : 'make -f make_cygwin.mak',
@@ -236,8 +236,8 @@ NeoBundle 'tpope/vim-surround'
 
 " # ステータスライン表示をオシャレに
 NeoBundle 'itchyny/lightline.vim'    
-  "let g:lightline = { 'colorscheme':  'landscape', }
-  "set laststatus=2
+"let g:lightline = { 'colorscheme':  'landscape', }
+"set laststatus=2
 
 " # Markdown, textfile のリアルタイムプレビュー
 " :PrevimOpen を実行してブラウザで開くのです。
@@ -308,7 +308,7 @@ if has('unix')
   " End w3m.vim setting
   "----------------------------------------------------------------------
 
-" w3mでPreview
+  " w3mでPreview
   NeoBundle 'yuratomo/w3m.vim'
 
 endif
