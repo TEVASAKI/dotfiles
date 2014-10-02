@@ -188,189 +188,151 @@ if has("autocmd")
 endif
 
 
-"------------------------------------------------------------------------------------------
-" Start NeoBundle Settings.
-"------------------------------------------------------------------------------------------
-" vi 互換モード
-" 不要。
-" 規定ではオン、vimrc か gvimrc が発見されたらオフ。
-" つまり、vimrc を書いた時点で nocompatibleになるのである。
-"set nocompatible
+" バージョンチェック
+" Vim7.4以上である事。
+if v:version > 704
+  "------------------------------------------------------------------------------------
+  " Start NeoBundle Settings.
+  "------------------------------------------------------------------------------------
+  " vi 互換モード
+  " 不要。
+  " 規定ではオン、vimrc か gvimrc が発見されたらオフ。
+  " つまり、vimrc を書いた時点で nocompatibleになるのである。
+  "set nocompatible
 
-" NeoBundle environment
-if has('win32') || has('win64')
-  set shellslash
-  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
-else
-  let $VIMDIR = expand('~/.vim')
-endif
+  " NeoBundle environment
+  if has('win32') || has('win64')
+    set shellslash
+    let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
+  else
+    let $VIMDIR = expand('~/.vim')
+  endif
 
-" bundle で管理するディレクトリを指定
-if has('vim_starting')
-  set runtimepath+=$VIMDIR/bundle/neobundle.vim/
-endif
+  " bundle で管理するディレクトリを指定
+  if has('vim_starting')
+    set runtimepath+=$VIMDIR/bundle/neobundle.vim/
+  endif
 
-" neobundle.vim の初期化
-call neobundle#rc(expand('$VIMDIR/bundle'))
+  " neobundle.vim の初期化
+  call neobundle#rc(expand('$VIMDIR/bundle'))
 
-" NeoBundle 自体をNeoBundleで管理
-NeoBundleFetch 'Shougo/NeoBundle.vim'
-
-
-" ### 今後はここ以降にPluginsを追記していく。
-" original repos on github
-" # 非同期プラグインのvimproc のダウンロードとコンパイル
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \   'mac' : 'make -f make_mac.mac',
-      \   'unix' : 'make -f make_unix.mak',
-      \   },
-      \ }
-" windows は自分でコンパイルする事にするー
-"  \   'windows' : 'mingw32-make.exe -f make_mingw64.mak',
-"  \   'cygwin' : 'make -f make_cygwin.mak',
+  " NeoBundle 自体をNeoBundleで管理
+  NeoBundleFetch 'Shougo/NeoBundle.vim'
 
 
-" # HTMLタグなど、囲まれているもの の編集補助
-NeoBundle 'tpope/vim-surround'    
+  " ### 今後はここ以降にPluginsを追記していく。
+  " original repos on github
+  " # 非同期プラグインのvimproc のダウンロードとコンパイル
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \   'mac' : 'make -f make_mac.mac',
+        \   'unix' : 'make -f make_unix.mak',
+        \   },
+        \ }
+  " windows は自分でコンパイルする事にするー
+  "  \   'windows' : 'mingw32-make.exe -f make_mingw64.mak',
+  "  \   'cygwin' : 'make -f make_cygwin.mak',
 
-" # ステータスライン表示をオシャレに
-NeoBundle 'itchyny/lightline.vim'    
-"let g:lightline = { 'colorscheme':  'landscape', }
-"set laststatus=2
 
-" # Markdown, textfile のリアルタイムプレビュー
-" :PrevimOpen を実行してブラウザで開くのです。
-NeoBundle 'kannokanno/previm'
-" Previm setting 1
-augroup PrevimSettings
-  autocmd!
-  autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+  " # HTMLタグなど、囲まれているもの の編集補助
+  NeoBundle 'tpope/vim-surround'    
 
-" # 名前の通り、ブラウザでプレビュー 
-NeoBundle 'tyru/open-browser.vim'
+  " # ステータスライン表示をオシャレに
+  NeoBundle 'itchyny/lightline.vim'    
+  "let g:lightline = { 'colorscheme':  'landscape', }
+  "set laststatus=2
 
-if has('unix') 
-  " # vim上で簡単に Compile & Run!
-  "   <\-r> で実行、らしい。
-  NeoBundle 'thinca/vim-quickrun'
-  "autocmd InsertEnter *   set shellslash
-  "autocmd InsertLeave *   set noshellslash
-  " 垂直分割
-  let g:quickrun_config={'*': {'split': 'vertical'}}
-  " 水平分割
-  "let g:quickrun_config={'*': {'split': ''}}
-  "set splitbelow
+  " # Markdown, textfile のリアルタイムプレビュー
+  " :PrevimOpen を実行してブラウザで開くのです。
+  NeoBundle 'kannokanno/previm'
+  " Previm setting 1
+  augroup PrevimSettings
+    autocmd!
+    autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  augroup END
 
-  " vim-quickrunでの実行結果を出力する先をファイルにする。
-  let g:quickrun_config = {}
-  let g:quickrun_config['markdown'] = {}
-  let g:quickrun_config['markdown']['outputter'] = 'file'
-  let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
+  " # 名前の通り、ブラウザでプレビュー 
+  NeoBundle 'tyru/open-browser.vim'
 
-  "----------------------------------------------------------------------
-  " vim-quickrun のhookを利用して、実行結果ファイルを作成後、w3m.vimで読み込む
-  "----------------------------------------------------------------------
-  let t:outputter_w3m_vim_bufname = ''
-  let s:hook = {
-        \ 'name': 'outputter_w3m_vim',
-        \ 'kind': 'hook',
-        \ 'is_success': 0,
-        \ 'config': { 'enable': 1 }
-        \ , '_bufname': 'hogeee'
-        \}
-  function! s:hook.on_success(session, context)
-    if a:session.config.outputter != 'file' || !match(a:session.config['outputter/name'], '.html$\c')
-      return
+  if has('unix') 
+    " # vim上で簡単に Compile & Run!
+    "   <\-r> で実行、らしい。
+    NeoBundle 'thinca/vim-quickrun'
+    "autocmd InsertEnter *   set shellslash
+    "autocmd InsertLeave *   set noshellslash
+    " 垂直分割
+    let g:quickrun_config={'*': {'split': 'vertical'}}
+    " 水平分割
+    "let g:quickrun_config={'*': {'split': ''}}
+    "set splitbelow
+
+    " vim-quickrunでの実行結果を出力する先をファイルにする。
+    let g:quickrun_config = {}
+    let g:quickrun_config['markdown'] = {}
+    let g:quickrun_config['markdown']['outputter'] = 'file'
+    let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
+
+    " コマンドが存在すれば
+    if executable('w3m')
+      " # w3mでPreview
+      NeoBundle 'yuratomo/w3m.vim'
+
+      "----------------------------------------------------------------------
+      " vim-quickrun のhookを利用して、実行結果ファイルを作成後、w3m.vimで読み込む
+      "----------------------------------------------------------------------
+      let t:outputter_w3m_vim_bufname = ''
+      let s:hook = {
+            \ 'name': 'outputter_w3m_vim',
+            \ 'kind': 'hook',
+            \ 'is_success': 0,
+            \ 'config': { 'enable': 1 }
+            \ , '_bufname': 'hogeee'
+            \}
+      function! s:hook.on_success(session, context)
+        if a:session.config.outputter != 'file' || !match(a:session.config['outputter/name'], '.html$\c')
+          return
+        endif
+
+        let mode = g:w3m#OPEN_SPLIT
+        let target = 'local'
+        let fname = a:session.outputter._file
+        let bufname = t:outputter_w3m_vim_bufname
+        if bufname != '' && bufwinnr(bufname) != -1
+          execute bufwinnr(bufname) 'wincmd w'
+          let mode = g:w3m#OPEN_NORAML
+          silent call w3m#Open( mode, target, fname )
+        else
+          silent call w3m#Open( mode, target, fname )
+          let t:outputter_w3m_vim_bufname = b:w3m_bufname
+        endif
+      endfunction
+
+      call quickrun#module#register(s:hook, 1)
+      unlet s:hook
+
+      " vim-markdown はftype=mkd として読み込むため、対策。
+      "let g:quickrun_config['mkd'] = copy(g:quickrun_config['markdown'])
+      "----------------------------------------------------------------------
+      " End w3m.vim setting
+      "----------------------------------------------------------------------
     endif
+  endif
 
-    let mode = g:w3m#OPEN_SPLIT
-    let target = 'local'
-    let fname = a:session.outputter._file
-    let bufname = t:outputter_w3m_vim_bufname
-    if bufname != '' && bufwinnr(bufname) != -1
-      execute bufwinnr(bufname) 'wincmd w'
-      let mode = g:w3m#OPEN_NORAML
-      silent call w3m#Open( mode, target, fname )
-    else
-      silent call w3m#Open( mode, target, fname )
-      let t:outputter_w3m_vim_bufname = b:w3m_bufname
-    endif
-  endfunction
+  " # Simplenote
+  NeoBundle 'mrtazz/simplenote.vim'
+  " login 情報は別ファイル
+  source $VIMDIR/bundle/simplenote.vim/simplenoterc
 
-  call quickrun#module#register(s:hook, 1)
-  unlet s:hook
 
-  " vim-markdown はftype=mkd として読み込むため、対策。
-  "let g:quickrun_config['mkd'] = copy(g:quickrun_config['markdown'])
-  "----------------------------------------------------------------------
-  " End w3m.vim setting
-  "----------------------------------------------------------------------
+  " 読み込んだPluginsを含め、ファイルタイプの検出、
+  " ファイルタイプ別プラグイン/インデントを有効化する。
+  filetype plugin   on
+  filetype indent   on
 
-  " w3mでPreview
-  NeoBundle 'yuratomo/w3m.vim'
-
+  " Install Check.
+  NeoBundleCheck
+  "------------------------------------------------------------------------------------
+  " End NeoBundle Settings.
+  "------------------------------------------------------------------------------------
 endif
-
-" Simplenote
-NeoBundle 'mrtazz/simplenote.vim'
-" login 情報は別ファイル
-source $VIMDIR/bundle/simplenote.vim/simplenoterc
-
-
-" 読み込んだPluginsを含め、ファイルタイプの検出、
-" ファイルタイプ別プラグイン/インデントを有効化する。
-filetype plugin   on
-filetype indent   on
-
-" Install Check.
-NeoBundleCheck
-"------------------------------------------------------------------------------------------
-" End NeoBundle Settings.
-"------------------------------------------------------------------------------------------
-
-"------------------------------------------------------------------------------------------
-" OMIT settings,,,
-"------------------------------------------------------------------------------------------
-"------------------------------------------------------------------------------------------
-" Chrome で Markdown Preview @Markdown Preview Plus .
-"------------------------------------------------------------------------------------------
-" command! MkdChrome call MkdChrome()
-" function! MkdChrome()
-" if has('win32') || has('win64')
-"   set shellslash
-"   call system('D:\Home\Tool\Comodo\Dragon\dragon.exe ' . expand('%'))
-" else
-"   call system('chromium-browser ' . expand('%'))
-" endif
-" endfunction
-
-
-" Previm setting 2
-"autocmd MyAutoGroup BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-"autocmd MyAutoGroup FileType markdown hi! def link markdownItalic LineNr
-
-" Previm setting 3
-" *.mkd だけでなく、md,mdwn,mkd,mkdn,mark* もMarkdown 形式と扱う
-" autocmd BufNewFile,BufRead <em>.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-" " Previm setting
-" let g:previm_open_cmd = ''
-" nnoremap [previm] <Nop>
-" nmap <Space>p [previm]
-" nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
-" nnoremap <silent> [previm]r :call previm#refresh()<CR>
-
-" PrevimSettings 4
-"au BufRead,BufNewfile *.md :set filetype=markdown
-
-
-" # Syntax highlighting, matching rules and mappings for the original Markdown and extensions. 
-" 原因これだーーーーー　これが*.mkd 形式で読み込んでしまうからバグるんだーーー
-"NeoBundle 'plasticboy/vim-markdown'
-
-" # Vim-shell
-"NeoBundle 'Shougo/vimshell.vim'
-
-" # 幅跳び。
-" NeoBundle 'mattn/habatobi-vim'    
+"
