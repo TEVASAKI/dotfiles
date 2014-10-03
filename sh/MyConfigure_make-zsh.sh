@@ -5,7 +5,8 @@
 # run with CHECK.sh
 source ./CHECK.sh
 
-CHECK ./configure --prefix=/usr/local --enable-locale --enable-multibyte 
+CHECK git pull
+CHECK ./configure --prefix=/usr/local --enable-locale --enable-multibyte
 CHECK make clean
 CHECK make -j 4
 #su -

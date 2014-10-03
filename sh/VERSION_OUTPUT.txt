@@ -1,6 +1,9 @@
+------------------------------
+---------- Versions ----------
+------------------------------
 ---------- OS ----------
 CentOS release 6.5 (Final)
-Linux centos6.5.XG41 2.6.32-431.23.3.el6.x86_64 #1 SMP Thu Jul 31 17:20:51 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+Linux centos6.5.XG41 2.6.32-431.29.2.el6.x86_64 #1 SMP Tue Sep 9 21:36:05 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
 ---------- CPU ----------
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
@@ -15,8 +18,8 @@ NUMAノード:         1
 CPUファミリー:    6
 モデル:             58
 ステッピング:    9
-CPU MHz:               3291.749
-BogoMIPS:              6583.49
+CPU MHz:               3291.770
+BogoMIPS:              6583.54
 ハイパーバイザーベンダー:VMware
 仮想化タイプ:    完全仮想化
 L1d キャッシュ:   32K
@@ -24,11 +27,13 @@ L1i キャッシュ:   32K
 L2 キャッシュ:    256K
 L3 キャッシュ:    6144K
 NUMA node0 CPU(s):     0,1
+
+
 ---------- git ----------
-git version 2.1.0
+git version 2.1.2.330.g565301e
 ---------- Vim ----------
-VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Sep 13 2014 23:53:40)
-適用済パッチ: 1-443
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Oct  3 2014 23:39:41)
+適用済パッチ: 1-463
 Compiled by teva@centos6.5.XG41
 Huge 版 without GUI.  機能の一覧 有効(+)/無効(-)
 +acl             +farsi           +mouse_netterm   +syntax
@@ -46,7 +51,7 @@ Huge 版 without GUI.  機能の一覧 有効(+)/無効(-)
 +cmdline_info    +keymap          +postscript      +virtualedit
 +comments        +langmap         +printer         +visual
 +conceal         +libcall         +profile         +visualextra
-+cryptv          +linebreak       -python          +viminfo
++cryptv          +linebreak       +python/dyn      +viminfo
 +cscope          +lispindent      -python3         +vreplace
 +cursorbind      +listcmds        +quickfix        +wildignore
 +cursorshape     +localmap        +reltime         +wildmenu
@@ -65,10 +70,12 @@ Huge 版 without GUI.  機能の一覧 有効(+)/無効(-)
          ユーザ exrc: "$HOME/.exrc"
        省略時の $VIM: "/usr/local/share/vim"
 コンパイル: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1      
-リンク: gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -ldl          
+リンク: gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lnsl   -ldl          
 ---------- Curl ----------
 curl 7.38.1-DEV (x86_64-unknown-linux-gnu) libcurl/7.38.1-DEV OpenSSL/1.0.1e zlib/1.2.3 libidn/1.18
 Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp smtp smtps telnet tftp 
 Features: IDN IPv6 Largefile NTLM NTLM_WB SSL libz 
 ---------- tmux ----------
 tmux 2.0
+---------- zsh ----------
+
