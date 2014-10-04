@@ -65,10 +65,10 @@ RPROMPT='[`rprompt-git-current-branch`%~]'
 
 ##
 
-# 右側まで入力がきたら時間表示を消す
+# 右側まで入力がきたら右プロンプトを消す
 setopt transient_rprompt
 
-# 変数展開など便利なプロント
+# 変数展開など便利なプロンプト
 setopt prompt_subst
 
 #
@@ -81,18 +81,16 @@ setopt nolistbeep
 # Ctrl + s = STOP の解除
 stty stop undef
 
-# エディタはvim
+# EDITOR にはvim を優先
 if type vi > /dev/null 2>&1; then
-  # vimを優先
   export EDITOR="vim"
 else
   # vim が無かったらvi を使う
   export EDITOR="vi"
 fi
 
-# ページャはlv
+# PAGER にはlvを 優先
 if type lv > /dev/null 2>&1; then
-  # lvを優先
   export PAGER="lv"
 else
   # lv が無かったらless を使う
@@ -182,7 +180,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # -la で自動判別して、 -Ou8 でUTF8決め打ち出力 -c で色付け
-alias lv='lv -la -c -Ou8'
+#alias lv='lv -la -c -Ou8'
 
 # todo.txt
 alias t='~/src/todo.txt-cli/todo.sh -a -t'
