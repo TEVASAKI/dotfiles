@@ -101,7 +101,7 @@ set showmatch
 set fileencodings=sjis,utf-8
 
 " backup , swap の出力先を設定 
-if has('win32') || has('win64')
+if has('win64') || has('win32')
   let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\')
 else
   let $VIMDIR = expand('~/.vim')
@@ -111,7 +111,7 @@ set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
 
 " undo ファイルの出力先を一箇所にまとめる(Kaoriya版対応
-if has('win32') || has('win64')
+if has('win64') || has('win32')
   set undodir=D:\Home\Tool\vim74-kaoriya-win64\undo-files
 endif
 
@@ -180,15 +180,15 @@ if has("autocmd")
   " これらのfiletypeではインデントを無効に
   " autocmd FileType php filetype indent off
 
-  autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
+  " autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
 endif
 
 
@@ -205,7 +205,7 @@ if v:version > 703
   "set nocompatible
 
   " NeoBundle environment
-  if has('win32') || has('win64')
+  if has('win64') || has('win32')
     set shellslash
     let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
   else
@@ -297,16 +297,16 @@ if v:version > 703
           return
         endif
 
-        let mode = g:w3m#OPEN_SPLIT
+        let mode = g:W3m#OPEN_SPLIT
         let target = 'local'
         let fname = a:session.outputter._file
         let bufname = t:outputter_w3m_vim_bufname
         if bufname != '' && bufwinnr(bufname) != -1
           execute bufwinnr(bufname) 'wincmd w'
-          let mode = g:w3m#OPEN_NORAML
-          silent call w3m#Open( mode, target, fname )
+          let mode = g:W3m#OPEN_NORAML
+          silent call W3m#Open( mode, target, fname )
         else
-          silent call w3m#Open( mode, target, fname )
+          silent call W3m#Open( mode, target, fname )
           let t:outputter_w3m_vim_bufname = b:w3m_bufname
         endif
       endfunction
