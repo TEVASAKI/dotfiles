@@ -6,6 +6,7 @@ Clone from gitHub
 
 
 # Dropbox install
+環境はCentOS6.5
 
 ### Dropbox 本体を HomeにDownload して展開してアカウント紐付け
     $ wget -O dropbox-lnx.x86.tar.gz "https://www.dropbox.com/download?plat=lnx.x86"
@@ -44,9 +45,16 @@ Done!
 
 ### status オプションで同期されているか確認
 `$ dropbox status`  
-Idle
+最新の状態
 
 ### 同期除外したいフォルダを登録
+`$ dropbox exclude add ‾/Dropbox/dotfiles/`
+
+Excluded:  
+dotfiles  
+* .gitファイルまで同期してしまうので、よくコンフリクトして
+xxx の競合コピー みたいなのが作られて色々とおかしく、面倒臭くなるので。
+ 
 `$ dropbox exclude add ‾/Dropbox/Photos/`
 
 Excluded:  
@@ -86,14 +94,14 @@ commands:
   
 Note: use dropbox help <command> to view usage for a specific command.  
   
- *status*   get current status of the dropboxd  
- *help*   provide help  
- *puburl*   get public url of a file in your dropbox  
- *stop*   stop dropboxd  
- *running*   return whether dropbox is running  
- *start*   start dropboxd  
- *filestatus*   get current sync status of one or more files  
- *ls*   list directory contents with current sync status  
- *autostart*   automatically start dropbox at login  
- *exclude*   ignores/excludes a directory from syncing  
- *lansync*   enables or disables LAN sync  
+ **autostart**   automatically start dropbox at login  
+ **exclude**   ignores/excludes a directory from syncing  
+ **filestatus**   get current sync status of one or more files  
+ **help**   provide help  
+ **lansync**   enables or disables LAN sync  
+ **ls**   list directory contents with current sync status  
+ **puburl**   get public url of a file in your dropbox  
+ **running**   return whether dropbox is running  
+ **start**   start dropboxd  
+ **status**   get current status of the dropboxd  
+ **stop**   stop dropboxd  

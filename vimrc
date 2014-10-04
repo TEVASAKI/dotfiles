@@ -297,16 +297,16 @@ if v:version > 703
           return
         endif
 
-        let mode = g:W3m#OPEN_SPLIT
+        let mode = g:w3m#OPEN_SPLIT
         let target = 'local'
         let fname = a:session.outputter._file
         let bufname = t:outputter_w3m_vim_bufname
         if bufname != '' && bufwinnr(bufname) != -1
           execute bufwinnr(bufname) 'wincmd w'
-          let mode = g:W3m#OPEN_NORAML
-          silent call W3m#Open( mode, target, fname )
+          let mode = g:w3m#OPEN_NORAML
+          silent call w3m#Open( mode, target, fname )
         else
-          silent call W3m#Open( mode, target, fname )
+          silent call w3m#Open( mode, target, fname )
           let t:outputter_w3m_vim_bufname = b:w3m_bufname
         endif
       endfunction
