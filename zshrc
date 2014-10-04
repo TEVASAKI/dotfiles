@@ -179,9 +179,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# -la で自動判別して、 -Ou8 でUTF8決め打ち出力 -c で色付け
-#alias lv='lv -la -c -Ou8'
-
 # todo.txt
 alias t='~/src/todo.txt-cli/todo.sh -a -t'
 
