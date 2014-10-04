@@ -16,7 +16,8 @@ esac
 
 PROMPT='[%n@%m]%# '
 PROMPT2=''
-#PS1="[${USER}@${HOST%%.*} %1~]%(!.#.$) " # Linux bashと同じ形式
+# Linux bashと同じ形式
+#PS1="[${USER}@${HOST%%.*} %1~]%(!.#.$) "
 
 #
 # Show branch name in Zsh's right prompt
