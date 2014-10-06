@@ -82,12 +82,20 @@ setopt nolistbeep
 stty stop undef
 
 # EDITOR にはvim を優先
-if type vi > /dev/null 2>&1; then
+if [ -x /usr/local/bin/vim ]; then
+  alias vi='vim'
   export EDITOR="vim"
 else
   # vim が無かったらvi を使う
   export EDITOR="vi"
 fi
+
+# if type vi > /dev/null 2>&1; then
+#   export EDITOR="vim"
+# else
+#   # vim が無かったらvi を使う
+#   export EDITOR="vi"
+# fi
 
 # PAGER にはlvを 優先
 if type lv > /dev/null 2>&1; then
@@ -184,6 +192,17 @@ alias t='~/src/todo.txt-cli/todo.sh -a -t'
 
 # tmux と libevent を繋ぐalias
 alias tmux=LD_LIBRARY_PATH=/usr/local/lib\ /usr/local/bin/tmux
+
+# If exist porg alias to paco
+if [ -x /usr/local/bin/porg ]; then
+  alias paco='porg'
+  else
+    if [ -x /usr/local/bin/paco ]; then
+      alias paco='paco'
+    else
+      echo porg and paco does not exist!
+    fi
+fi
 
 # 設定ファイルのinclude ,,,これいるん？
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include 
