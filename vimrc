@@ -215,14 +215,13 @@ if v:version > 703
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
     set runtimepath+=$VIMDIR/bundle/neobundle.vim/
-
-    " neobundle.vim の初期化
-    call neobundle#rc(expand('$VIMDIR/bundle'))
-
-    " NeoBundle 自体をNeoBundleで管理
-    NeoBundleFetch 'Shougo/NeoBundle.vim'
   endif
 
+  " neobundle.vim の初期化
+  call neobundle#rc(expand('$VIMDIR/bundle'))
+
+  " NeoBundle 自体をNeoBundleで管理
+  NeoBundleFetch 'Shougo/NeoBundle.vim'
 
   " ### 今後はここ以降にPluginsを追記していく。
   " original repos on github
