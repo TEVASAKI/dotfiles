@@ -24,6 +24,10 @@
 "------------------------------------------------------------------------------------------
 " 基本
 "------------------------------------------------------------------------------------------
+" ファイルタイプ別プラグイン/インデントを有効化する。
+filetype  plugin  on
+filetype  indent  on
+
 " 強制前保存終了を無効化
 nnoremap  ZZ  <Nop>
 
@@ -172,24 +176,24 @@ set paste
 vnoremap < <gv
 vnoremap > >gv
 
-if has("autocmd")
-  " ファイルタイプの検索を有効にする
-  filetype plugin on
-  " そのファイルタイプに合わせたインデントを利用する
-  filetype indent on
-  " これらのfiletypeではインデントを無効に
-  " autocmd FileType php filetype indent off
-
-  " autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
-  " autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
-endif
+" if has("autocmd")
+"   " ファイルタイプの検索を有効にする
+"   filetype plugin on
+"   " そのファイルタイプに合わせたインデントを利用する
+"   filetype indent on
+"   " これらのfiletypeではインデントを無効に
+"   autocmd FileType php filetype indent off
+" 
+"   autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
+"   autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
+" endif
 
 
 " バージョンチェック
@@ -214,6 +218,9 @@ if v:version > 703
 
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
+    " 一旦 off
+    filetype  plugin  off
+    filetype  indent  off
     set runtimepath+=$VIMDIR/bundle/neobundle.vim/
   endif
 
@@ -331,8 +338,8 @@ if v:version > 703
 
   " 読み込んだPluginsを含め、ファイルタイプの検出、
   " ファイルタイプ別プラグイン/インデントを有効化する。
-  filetype plugin   on
-  filetype indent   on
+  filetype  plugin  on
+  filetype  indent  on
 
   " Install Check.
   NeoBundleCheck
