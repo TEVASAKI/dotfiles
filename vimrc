@@ -17,10 +17,9 @@
 " 日本語入力対応
 """"""""""""""""""""""""""""""""""""""""""
 :set fenc=utf-8
+:set enc=utf-8
+:set fencs=utf-8,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
 ":set fencs=iso-2022-jp,euc-jp,cp932,utf-8
-":set enc=utf-8
-:set encoding=utf-8
-:set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
 "------------------------------------------------------------------------------------------
 " 基本
 "------------------------------------------------------------------------------------------
@@ -47,24 +46,25 @@ set list
 set listchars=tab:>-,trail:~
 
 " Backspace の挙動を改善する。
-" eol: 改行文字の削除を許可する
-" indent: 自動インデントが行われた場合、インデント部分の削除を許可する
-" start: インサートモードの開始位置よりも前の文字列の削除を許可する
+"   eol: 改行文字の削除を許可する
+"   indent: 自動インデントが行われた場合、インデント部分の削除を許可する
+"   start: インサートモードの開始位置よりも前の文字列の削除を許可する
 set backspace=eol,indent,start
 
 " 検索における大文字小文字の無視
 set ignorecase
 
-" その上で検索における大文字小文字の区別の改善
+" ignorecase 且つ、検索における大文字小文字の区別の改善
+"   |------------------------------------------------
+"   | 小文字 | 大文字 | パターン例 | 大小文字の区別 |
+"   |------------------------------------------------
+"   |   ○    |   Ｘ   | foobar     | されない       |
+"   |------------------------------------------------
+"   |   Ｘ   |   ○    | FOOBAR     | される         |
+"   |------------------------------------------------
+"   |   ○    |   ○    | FooBar     | される         |
+"   |------------------------------------------------
 set smartcase
-" | 小文字 | 大文字 | パターン例 | 大小文字の区別 |
-" |------------------------------------------------
-" |   ○   |   Ｘ   | foobar     | されない       |
-" |------------------------------------------------
-" |   Ｘ   |   ○   | FOOBAR     | される         |
-" |------------------------------------------------
-" |   ○   |   ○   | FooBar     | される         |
-" |------------------------------------------------
 
 " 検索パターンマッチ箇所の強調表示
 " そして検索結果のハイライトをさり気なく消す。
@@ -94,7 +94,6 @@ set tabstop=2
 " Shift width of 2
 set shiftwidth=2
 
-" If you type the Tab in the margin of the beginning of a line, to indent the number of 'shiftwidth'.
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
 
@@ -176,25 +175,6 @@ set paste
 vnoremap < <gv
 vnoremap > >gv
 
-" if has("autocmd")
-"   " ファイルタイプの検索を有効にする
-"   filetype plugin on
-"   " そのファイルタイプに合わせたインデントを利用する
-"   filetype indent on
-"   " これらのfiletypeではインデントを無効に
-"   autocmd FileType php filetype indent off
-" 
-"   autocmd FileType apache  setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType c       setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType css     setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType html    setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType java    setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType php     setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType ruby    setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType sh      setlocal sw=2 sts=2 ts=2 et
-"   autocmd FileType vim     setlocal sw=2 sts=2 ts=2 et
-" endif
-
 
 " バージョンチェック
 " Vim7.3以上である事。
@@ -230,8 +210,10 @@ if v:version > 703
   " NeoBundle 自体をNeoBundleで管理
   NeoBundleFetch 'Shougo/NeoBundle.vim'
 
-  " ### 今後はここ以降にPluginsを追記していく。
-  " original repos on github
+  "
+  " 共通設定
+  "
+
   " # 非同期プラグインのvimproc のダウンロードとコンパイル
   NeoBundle 'Shougo/vimproc', {
         \ 'build' : {
@@ -244,13 +226,77 @@ if v:version > 703
   "  \   'cygwin' : 'make -f make_cygwin.mak',
 
 
+  " Color scheme
+    NeoBundle 'git@github.com:vim-scripts/phd.git'
+
+  "
   " # HTMLタグなど、囲まれているもの の編集補助
   NeoBundle 'tpope/vim-surround'    
 
   " # ステータスライン表示をオシャレに
   NeoBundle 'itchyny/lightline.vim'    
-  "let g:lightline = { 'colorscheme':  'landscape', }
-  "set laststatus=2
+  set laststatus=2
+  "let g:lightline = { 'colorscheme':  'solarized', }
+let g:lightline = {
+        \ 'colorscheme': 'solarized',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'MyModified',
+        \   'readonly': 'MyReadonly',
+        \   'fugitive': 'MyFugitive',
+        \   'filename': 'MyFilename',
+        \   'fileformat': 'MyFileformat',
+        \   'filetype': 'MyFiletype',
+        \   'fileencoding': 'MyFileencoding',
+        \   'mode': 'MyMode'
+        \ }
+        \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
   " # Markdown, textfile のリアルタイムプレビュー
   " :PrevimOpen を実行してブラウザで開くのです。
@@ -264,6 +310,9 @@ if v:version > 703
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
 
+  "
+  " Linux系 固有設定
+  "
   if has('unix') 
     " # vim上で簡単に Compile & Run!
     "   <\-r> で実行、らしい。
@@ -328,6 +377,9 @@ if v:version > 703
     endif
   endif
 
+  "
+  " windows系 固有設定
+  "
   if has('win64') || has('win32')
     " # Simplenote
     NeoBundle 'mrtazz/simplenote.vim'
