@@ -13,16 +13,17 @@ CHECK ./configure \
 --with-features=huge \
 --disable-selinux \
 --prefix=/usr/local \
---srcdir=. \
 --enable-gui=gtk2 \
-#--enable-pythoninterp \
---with-python-config-dir=/usr/lib/python3.3/ \
---enable-python3interp \
---enable-rubyinterp \
+# --disable-pythoninterp \
+# --enable-python3interp \
+# --with-python-config-dir=/usr/lib64/python2.7/config \
+# --with-python-config-dir=/usr/lib64/python3.3/config-3.3m/ \
+#  --enable-rubyinterp \
+# --with-ruby-command=/usr/bin/ruby \
 --enable-fontset
 
-CHECK make clean 
-CHECK make -j 4 
+CHECK make clean
+CHECK make -j 4
 #su -
 #CHECK sudo paco -lD make install
 
