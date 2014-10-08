@@ -23,11 +23,8 @@
 "------------------------------------------------------------------------------------------
 " 基本
 "------------------------------------------------------------------------------------------
-" ファイルタイプ別プラグイン/インデントを有効化する。
-filetype  plugin  on
-filetype  indent  on
 
-" 強制前保存終了を無効化
+" 強制全保存終了を無効化
 nnoremap  ZZ  <Nop>
 
 " スクロール時の余白確保
@@ -103,6 +100,9 @@ set showmatch
 " Shift-jis support
 set fileencodings=sjis,utf-8
 
+" コマンドライン補完強化
+set wildmenu
+
 " backup , swap の出力先を設定 
 if has('win64') || has('win32')
   let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\')
@@ -115,11 +115,10 @@ let &directory = &backupdir
 
 " undo ファイルの出力先を一箇所にまとめる(Kaoriya版対応
 if has('win64') || has('win32')
-  set undodir=D:\Home\Tool\vim74-kaoriya-win64\undo-files
+  set undodir=$VIMDIR\undo-files
 endif
 
-" Ctrl + n / p の配色設定
-" hi  Pmenu ctermbg=4
+" Ctrl + n / p の配色設定" hi  Pmenu ctermbg=4
 " hi  Pmenusel ctermbg=1
 " hi  PMenuSbar ctermbg=4
 
@@ -129,11 +128,11 @@ endif
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
 " Ctrl + w,h を押すと横分割される。
-map <C-W><C-V>  :Vexplore!<CR>
-map <C-W><C-H>  :Hexplore<CR>
-map! <C-W><C-V>  <Esc>:Vexplore!<CR>
-map! <C-W><C-H>  <Esc>:Hexplore<CR>
-let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
+" map <C-W><C-V>  :Vexplore!<CR>
+" map <C-W><C-H>  :Hexplore<CR>
+" map! <C-W><C-V>  <Esc>:Vexplore!<CR>
+" map! <C-W><C-H>  <Esc>:Hexplore<CR>
+" let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
 
 " Space + . で、_vimrc を編集出来るようにする。
 nnoremap <Space>.   :<C-u>edit $MYVIMRC<CR>
@@ -198,9 +197,6 @@ if v:version > 703
 
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
-    " 一旦 off
-    filetype  plugin  off
-    filetype  indent  off
     set runtimepath+=$VIMDIR/bundle/neobundle.vim/
   endif
 
@@ -227,76 +223,15 @@ if v:version > 703
 
 
   " Color scheme
-    NeoBundle 'git@github.com:vim-scripts/phd.git'
+  NeoBundle 'git@github.com:vim-scripts/phd.git'
 
-  "
   " # HTMLタグなど、囲まれているもの の編集補助
   NeoBundle 'tpope/vim-surround'    
 
   " # ステータスライン表示をオシャレに
   NeoBundle 'itchyny/lightline.vim'    
   set laststatus=2
-  "let g:lightline = { 'colorscheme':  'solarized', }
-let g:lightline = {
-        \ 'colorscheme': 'solarized',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'MyModified',
-        \   'readonly': 'MyReadonly',
-        \   'fugitive': 'MyFugitive',
-        \   'filename': 'MyFilename',
-        \   'fileformat': 'MyFileformat',
-        \   'filetype': 'MyFiletype',
-        \   'fileencoding': 'MyFileencoding',
-        \   'mode': 'MyMode'
-        \ }
-        \ }
-
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-function! MyFugitive()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return fugitive#head()
-    endif
-  catch
-  endtry
-  return ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+  let g:lightline = { 'colorscheme':  'solarized', }
 
   " # Markdown, textfile のリアルタイムプレビュー
   " :PrevimOpen を実行してブラウザで開くのです。
@@ -310,9 +245,14 @@ endfunction
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
 
+  " For mouse click in NERDtree
+  NeoBundle 'scrooloose/nerdtree'
+
+
   "
   " Linux系 固有設定
   "
+
   if has('unix') 
     " # vim上で簡単に Compile & Run!
     "   <\-r> で実行、らしい。
@@ -377,9 +317,11 @@ endfunction
     endif
   endif
 
+
   "
   " windows系 固有設定
   "
+
   if has('win64') || has('win32')
     " # Simplenote
     NeoBundle 'mrtazz/simplenote.vim'
@@ -389,15 +331,16 @@ endfunction
     source $VIMDIR/bundle/simplenote.vim/simplenoterc
   endif
 
-  " 読み込んだPluginsを含め、ファイルタイプの検出、
-  " ファイルタイプ別プラグイン/インデントを有効化する。
-  filetype  plugin  on
-  filetype  indent  on
-
   " Install Check.
   NeoBundleCheck
   "------------------------------------------------------------------------------------
   " End NeoBundle Settings.
   "------------------------------------------------------------------------------------
 endif
+
 "
+" 読み込んだPluginsを含め、ファイルタイプの検出、
+" ファイルタイプ別プラグイン/インデントを有効化する。
+filetype  plugin  on
+filetype  indent  on
+
