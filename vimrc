@@ -1,4 +1,3 @@
-"
 "                                ___           ___           ___
 "      ___                      /\  \         /\  \         /\__\
 "     /\  \        ___         |::\  \       /::\  \       /:/  /
@@ -11,18 +10,25 @@
 "   \::::/__/       /:/  /     \:\__\        \:\__\        \::/  /
 "    ~~~~           \/__/       \/__/         \/__/         \/__/
 "
-"
-""""""""""""""""""""""""""""""""""""""""""
-" Response to the Japanese character code
+"------------------------------------------------------------------------------------------
+" Environment
+"------------------------------------------------------------------------------------------
+if has('win64') || has('win32')
+  set shellslash
+  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
+else
+  let $VIMDIR = expand('~/.vim')
+endif
+
+"------------------------------------------------------------------------------------------
+" 基本
+"------------------------------------------------------------------------------------------
+
 " 日本語入力対応
-""""""""""""""""""""""""""""""""""""""""""
 :set fenc=utf-8
 :set enc=utf-8
 :set fencs=utf-8,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
 ":set fencs=iso-2022-jp,euc-jp,cp932,utf-8
-"------------------------------------------------------------------------------------------
-" 基本
-"------------------------------------------------------------------------------------------
 
 " 強制全保存終了を無効化
 nnoremap  ZZ  <Nop>
@@ -73,9 +79,6 @@ set novisualbell
 set noerrorbells
 set vb t_vb=
 
-" vim-hier のハイライト削除
-"nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
-
 " 現在のモードの表示
 set showmode
 
@@ -103,12 +106,7 @@ set fileencodings=sjis,utf-8
 " コマンドライン補完強化
 set wildmenu
 
-" backup , swap の出力先を設定 
-if has('win64') || has('win32')
-  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\')
-else
-  let $VIMDIR = expand('~/.vim')
-endif
+" backup , swap の出力先を設定
 set backup
 set backupdir=$VIMDIR/backup-files
 let &directory = &backupdir
@@ -118,22 +116,18 @@ if has('win64') || has('win32')
   set undodir=$VIMDIR\undo-files
 endif
 
-" Ctrl + n / p の配色設定" hi  Pmenu ctermbg=4
-" hi  Pmenusel ctermbg=1
-" hi  PMenuSbar ctermbg=4
+" vim-hier のハイライト削除
+"nmap  <silent><Esc><Esc>  :<C-u>nohlsearch<CR>:HierClear<CR>:redraw!<CR><Esc>
+
+" vi 互換モード
+" 不要。
+" 規定ではオン、vimrc か gvimrc が発見されたらオフ。
+" つまり、vimrc を書いた時点で nocompatibleになるのである。
+"set nocompatible
 
 "------------------------------------------------------------------------------------------
 " 拡張
 "------------------------------------------------------------------------------------------
-" Window 分割関連
-" insert mode 時でもCtrl + w,v を押すと縦分割され、 
-" Ctrl + w,h を押すと横分割される。
-" map <C-W><C-V>  :Vexplore!<CR>
-" map <C-W><C-H>  :Hexplore<CR>
-" map! <C-W><C-V>  <Esc>:Vexplore!<CR>
-" map! <C-W><C-H>  <Esc>:Hexplore<CR>
-" let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
-
 " Space + . で、_vimrc を編集出来るようにする。
 nnoremap <Space>.   :<C-u>edit $MYVIMRC<CR>
 
@@ -150,10 +144,18 @@ if has("clipboard")
   endif
 endif
 
+" Window 分割関連
+" insert mode 時でもCtrl + w,v を押すと縦分割され、 
+" Ctrl + w,h を押すと横分割される。
+" map <C-W><C-V>  :Vexplore!<CR>
+" map <C-W><C-H>  :Hexplore<CR>
+" map! <C-W><C-V>  <Esc>:Vexplore!<CR>
+" map! <C-W><C-H>  <Esc>:Hexplore<CR>
+" let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
+
 "------------------------------------------------------------------------------------------
 " Indent
 "------------------------------------------------------------------------------------------
-" To perform advanced automatic indentation when you made the new line
 " 新しい行を作ったときに高度な自動インデントを行う
 " 新しい行を開始した時に、新しい行のインデントを現在行と同じ量にするという事。
 set smartindent
@@ -161,39 +163,28 @@ set smartindent
 " 自動でインデント
 set autoindent
 
-" ペースト時にautoindent を無効に(ONにするとautocomplpop.vimが動かない(謎) 
+" ペースト時にautoindent を無効に(ONにするとautocomplpop.vimが動かない(謎)
 set paste
-
-" Cソースの自動インデントを始める
-" smartindent はcindent かindentexpr が有効な時は意味が無い
-" :help smartindent
-"set cindent
 
 " 連続インデント(謎
 " ビジュアルモードで<- -> キーによるインデント後にビジュアルモードが解除されないようにする
 vnoremap < <gv
 vnoremap > >gv
 
+" Cソースの自動インデントを始める
+" 不要。
+" smartindent はcindent かindentexpr が有効な時は意味が無い
+" :help smartindent
+"set cindent
 
-" バージョンチェック
+
+" NeoBundle 使用前バージョンチェック
 " Vim7.3以上である事。
 if v:version > 703
+
   "------------------------------------------------------------------------------------
   " Start NeoBundle Settings.
   "------------------------------------------------------------------------------------
-  " vi 互換モード
-  " 不要。
-  " 規定ではオン、vimrc か gvimrc が発見されたらオフ。
-  " つまり、vimrc を書いた時点で nocompatibleになるのである。
-  "set nocompatible
-
-  " NeoBundle environment
-  if has('win64') || has('win32')
-    set shellslash
-    let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
-  else
-    let $VIMDIR = expand('~/.vim')
-  endif
 
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
@@ -205,6 +196,7 @@ if v:version > 703
 
   " NeoBundle 自体をNeoBundleで管理
   NeoBundleFetch 'Shougo/NeoBundle.vim'
+
 
   "
   " 共通設定
@@ -226,21 +218,20 @@ if v:version > 703
   NeoBundle 'git@github.com:vim-scripts/phd.git'
 
   " # HTMLタグなど、囲まれているもの の編集補助
-  NeoBundle 'tpope/vim-surround'    
+  NeoBundle 'tpope/vim-surround'
 
   " # ステータスライン表示をオシャレに
-  NeoBundle 'itchyny/lightline.vim'    
-  set laststatus=2
-  let g:lightline = { 'colorscheme':  'solarized', }
+  NeoBundle 'itchyny/lightline.vim'
+    set laststatus=2
+    let g:lightline = { 'colorscheme': 'solarized' }
 
   " # Markdown, textfile のリアルタイムプレビュー
   " :PrevimOpen を実行してブラウザで開くのです。
   NeoBundle 'kannokanno/previm'
-  " Previm setting 1
-  augroup PrevimSettings
-    autocmd!
-    autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-  augroup END
+    augroup PrevimSettings
+      autocmd!
+      autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    augroup END
 
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
@@ -250,26 +241,26 @@ if v:version > 703
 
 
   "
-  " Linux系 固有設定
+  " Linux系 固有
   "
 
   if has('unix') 
     " # vim上で簡単に Compile & Run!
     "   <\-r> で実行、らしい。
     NeoBundle 'thinca/vim-quickrun'
-    "autocmd InsertEnter *   set shellslash
-    "autocmd InsertLeave *   set noshellslash
-    " 垂直分割
-    let g:quickrun_config={'*': {'split': 'vertical'}}
-    " 水平分割
-    "let g:quickrun_config={'*': {'split': ''}}
-    "set splitbelow
+      "autocmd InsertEnter *   set shellslash
+      "autocmd InsertLeave *   set noshellslash
+      " 垂直分割
+      let g:quickrun_config={'*': {'split': 'vertical'}}
+      " 水平分割
+      "let g:quickrun_config={'*': {'split': ''}}
+      "set splitbelow
 
-    " vim-quickrunでの実行結果を出力する先をファイルにする。
-    let g:quickrun_config = {}
-    let g:quickrun_config['markdown'] = {}
-    let g:quickrun_config['markdown']['outputter'] = 'file'
-    let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
+      " vim-quickrunでの実行結果を出力する先をファイルにする。
+      let g:quickrun_config = {}
+      let g:quickrun_config['markdown'] = {}
+      let g:quickrun_config['markdown']['outputter'] = 'file'
+      let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
 
     " コマンドが存在すれば
     if executable('w3m')
@@ -319,20 +310,21 @@ if v:version > 703
 
 
   "
-  " windows系 固有設定
+  " win系 固有
   "
 
   if has('win64') || has('win32')
     " # Simplenote
     NeoBundle 'mrtazz/simplenote.vim'
-    " login 情報は別ファイル
-    " let g:SimplenoteUsername = "xxxx"
-    " let g:SimplenotePassword = "yyyy"
-    source $VIMDIR/bundle/simplenote.vim/simplenoterc
+      " login 情報は別ファイル
+      " let g:SimplenoteUsername = "xxxx"
+      " let g:SimplenotePassword = "yyyy"
+      source $VIMDIR/bundle/simplenote.vim/simplenoterc
   endif
 
   " Install Check.
   NeoBundleCheck
+
   "------------------------------------------------------------------------------------
   " End NeoBundle Settings.
   "------------------------------------------------------------------------------------
