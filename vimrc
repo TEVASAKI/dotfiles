@@ -19,7 +19,7 @@ if has('win64') || has('win32')
   let $NAREAI = expand('D:\Home\Tool\public_html-2\diary\template')
 else
   let $VIMDIR = expand('~/.vim')
-  let $NAREAI = expand('~/nareai/diary/template')
+  let $NAREAI = expand('~/nareaiba/diary/template')
 endif
 
 "------------------------------------------------------------------------------------------
