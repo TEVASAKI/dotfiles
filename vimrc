@@ -16,8 +16,10 @@
 if has('win64') || has('win32')
   set shellslash
   let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
+  let $NAREAI = expand('D:\Home\Tool\public_html-2\diary\template')
 else
   let $VIMDIR = expand('~/.vim')
+  let $NAREAI = expand('~/nareai/diary/template')
 endif
 
 "------------------------------------------------------------------------------------------
@@ -191,11 +193,12 @@ if v:version > 703
     set runtimepath+=$VIMDIR/bundle/neobundle.vim/
   endif
 
-  " neobundle.vim の初期化
-  call neobundle#rc(expand('$VIMDIR/bundle'))
+  call neobundle#begin(expand('$VIMDIR/bundle'))
 
   " NeoBundle 自体をNeoBundleで管理
   NeoBundleFetch 'Shougo/NeoBundle.vim'
+
+  call neobundle#end()
 
 
   "
@@ -233,10 +236,17 @@ if v:version > 703
       autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
     augroup END
 
+    " ファイル保存時リアルタイムプレビュー
+    let g:previm_enable_realtime = 1
+
+    " デフォルトのCSSを使わず、独自のCSSのみ適用する
+    let g:previm_disable_default_css = 1
+    let g:previm_custom_css_path = '$NAREAI/markdown-style.css'
+
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
 
-  " For mouse click in NERDtree
+  " NERDtree
   NeoBundle 'scrooloose/nerdtree'
 
 
