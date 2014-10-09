@@ -2,7 +2,8 @@
 " global ENV
 "---------------------------------------------------------------------------
 if has('win64') || has('win32')
-  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\')
+  set shellslash
+  let $VIMDIR = expand('D:\Home\Tool\vim74-kaoriya-win64\.vim')
 else
   let $VIMDIR = expand('~/.vim')
 endif
@@ -32,7 +33,7 @@ set guioptions-=T
 "---------------------------------------------------------------------------
 " 終了時のウィンドウサイズを保存する
 "---------------------------------------------------------------------------
-let g:save_window_file = expand('$VIMDIR/.vimWinpos')
+let g:save_window_file = expand('$VIMDIR/Winpos')
 augroup SaveWindow
   autocmd!
   autocmd VimLeavePre * call s:save_window()
