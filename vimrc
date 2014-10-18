@@ -218,7 +218,7 @@ if v:version > 703
 
 
   " Color scheme
-  NeoBundle 'git@github.com:vim-scripts/phd.git'
+  NeoBundle 'vim-scripts/phd.git'
 
   " # HTMLタグなど、囲まれているもの の編集補助
   NeoBundle 'tpope/vim-surround'
