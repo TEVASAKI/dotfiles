@@ -146,6 +146,9 @@ if has("clipboard")
   endif
 endif
 
+" v * 2 で行末まで選択
+vnoremap v $h
+
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
 " Ctrl + w,h を押すと横分割される。
