@@ -23,6 +23,9 @@ usermod -G wheel teva
 #su teva
 #passwd
 
+# 必須的な
+yum install wget manpages-ja.noarch man.x86_64
+
 # 開発ツール
 yum groupinstall 'Development tools'
 
@@ -53,9 +56,6 @@ yum update
 #----------------------------------------------------------------------
 # Package install
 #----------------------------------------------------------------------
-# 必須的な
-yum install wget manpages-ja.noarch man.x86_64
-
 # vim用
 yum install mercurial ncurses-devel
 
