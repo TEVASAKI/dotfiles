@@ -23,6 +23,9 @@ usermod -G wheel teva
 #su teva
 #passwd
 
+# 開発ツール
+yum groupinstall 'Development tools'
+
 #----------------------------------------------------------------------
 # RPM forge add
 #----------------------------------------------------------------------
@@ -50,11 +53,8 @@ yum update
 #----------------------------------------------------------------------
 # Package install
 #----------------------------------------------------------------------
-# 開発ツール
-yum group install 'Development tools'
-
 # 必須的な
-yum install wget manpages-ja.noarch man.x86_64 zsh.x86_64
+yum install wget manpages-ja.noarch man.x86_64
 
 # vim用
 yum install mercurial ncurses-devel
@@ -69,14 +69,14 @@ rpm -ivh /root/rpmbuild/RPMS/x86_64/lv-4.51-8.1.x86_64.rpm
 yum install perl-ExtUtils-MakeMaker.x86_64 libcurl-devel.x86_64
 
 # paco
-readonly WORK_PACO_TMPDIR="/tmp/work/paco"
-mkdir -p $WORK_PACO_TMPDIR
-cd $WORK_PACO_TMPDIR
-wget http://sourceforge.net/projects/paco/files/paco/2.0.9/paco-2.0.9.tar.gz
-tar zxvf paco-2.0.9.tar.gz
-cd paco-2.0.9
-./configure --prefix=/usr/local --disable-gpaco
-make -j 4
-make install
-make logme
-  
+# readonly WORK_PACO_TMPDIR="/tmp/work/paco"
+# mkdir -p $WORK_PACO_TMPDIR
+# cd $WORK_PACO_TMPDIR
+# wget http://sourceforge.net/projects/paco/files/paco/2.0.9/paco-2.0.9.tar.gz
+# tar zxvf paco-2.0.9.tar.gz
+# cd paco-2.0.9
+# ./configure --prefix=/usr/local --disable-gpaco
+# make -j 4
+# make install
+# make logme
+#   
