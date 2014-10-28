@@ -38,7 +38,7 @@ wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.
 rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 
 # 他リポジトリとのパッケージ競合を避けるため、enabled=0として普段は読まないようにしておく
-sed -i -e s/enabled = 1/enabled = 0/g /etc/yum.repos.d/rpmforge.repo
+sed -i -e "s/enabled = 1/enabled = 0/g" /etc/yum.repos.d/rpmforge.repo
 
 #----------------------------------------------------------------------
 # EPEL add
@@ -47,7 +47,7 @@ wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 
 # 他リポジトリとのパッケージ競合を避けるため、enabled=0として普段は読まないようにしておく
-sed -i -e s/enabled=1/enabled=0/g /etc/yum.repos.d/epel.repo
+sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/epel.repo
 
 ## system UPDATE
 yum update
@@ -59,14 +59,14 @@ yum update
 # vim用
 yum install mercurial ncurses-devel
 
+# Git用
+yum install perl-ExtUtils-MakeMaker.x86_64 libcurl-devel.x86_64
+
 # lv のインストール
 wget http://vault.centos.org/5.7/os/SRPMS/lv-4.51-8.1.src.rpm
 rpm -ivh lv-4.51-8.1.src.rpm
 rpmbuild -bb /root/rpmbuild/SPECS/lv.spec
 rpm -ivh /root/rpmbuild/RPMS/x86_64/lv-4.51-8.1.x86_64.rpm
-
-# Git用
-yum install perl-ExtUtils-MakeMaker.x86_64 libcurl-devel.x86_64
 
 # paco
 # readonly WORK_PACO_TMPDIR="/tmp/work/paco"
