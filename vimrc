@@ -149,6 +149,12 @@ endif
 " v * 2 で行末まで選択
 vnoremap v $h
 
+" インサートモードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
 " Ctrl + w,h を押すと横分割される。
