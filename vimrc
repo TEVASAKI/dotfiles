@@ -87,6 +87,9 @@ set showmode
 " コマンド入力状況の表示
 set showcmd
 
+" カーソルラインの表示
+set cursorline
+
 " タブ入力を複数の空白入力に置き換える
 set expandtab
 
@@ -258,7 +261,6 @@ if v:version > 703
   " NERDtree
   NeoBundle 'scrooloose/nerdtree'
 
-
   "
   " Linux系 固有
   "
@@ -335,10 +337,12 @@ if v:version > 703
   if has('win64') || has('win32')
     " # Simplenote
     NeoBundle 'mrtazz/simplenote.vim'
-      " login 情報は別ファイル
       " let g:SimplenoteUsername = "xxxx"
       " let g:SimplenotePassword = "yyyy"
+      " login 情報は別ファイル
       source $VIMDIR/bundle/simplenote.vim/simplenoterc
+      " Set the default vim filetype for notes.
+      let g:SimplenoteFiletype="markdown"
   endif
 
   " Install Check.
