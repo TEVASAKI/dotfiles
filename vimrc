@@ -87,9 +87,6 @@ set showmode
 " コマンド入力状況の表示
 set showcmd
 
-" カーソルラインの表示
-set cursorline
-
 " タブ入力を複数の空白入力に置き換える
 set expandtab
 
@@ -227,7 +224,6 @@ if v:version > 703
   " windows は自分でコンパイルする事にするー
   "  \   'windows' : 'mingw32-make.exe -f make_mingw64.mak',
   "  \   'cygwin' : 'make -f make_cygwin.mak',
-
 
   " Color scheme
   NeoBundle 'vim-scripts/phd.git'
