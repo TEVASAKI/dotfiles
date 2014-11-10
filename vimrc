@@ -155,6 +155,9 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" ヤンクレジスタのペースト
+noremap PP "0p
+
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
 " Ctrl + w,h を押すと横分割される。
