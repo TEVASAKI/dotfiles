@@ -202,6 +202,8 @@ if v:version > 703
   "------------------------------------------------------------------------------------
   " Start NeoBundle Settings.
   "------------------------------------------------------------------------------------
+  " Fisrs of all RUN this script for .vim directory
+  " git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
