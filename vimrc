@@ -30,7 +30,10 @@ endif
 :set fenc=utf-8
 :set enc=utf-8
 :set fencs=utf-8,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
-":set fencs=iso-2022-jp,euc-jp,cp932,utf-8
+:set fencs=iso-2022-jp,euc-jp,cp932,utf-8
+
+" 改行コード自動認識
+set fileformats=unix,dos,mac
 
 " 強制全保存終了を無効化
 nnoremap  ZZ  <Nop>
