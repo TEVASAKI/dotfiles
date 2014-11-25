@@ -6,7 +6,7 @@
 source ./CHECK.sh
 
 CHECK git pull
-CHECK ./configure --prefix=/usr/local 
+CHECK ./configure --prefix=/usr/local --enable-optimize --enable-FEATURE=yes 
 CHECK make clean 
 CHECK make -j 4 
 #su -
