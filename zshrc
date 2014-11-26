@@ -115,7 +115,8 @@ else
 fi
 
 # Use Color
-autoload -U colors; colors
+autoload -Uz colors
+colors
 
 # 補完機能 & 賢くする
 autoload -Uz compinit
@@ -179,6 +180,7 @@ bindkey "^N" history-beginning-search-forward-end
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
+alias ls='ls -F --color=auto'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'

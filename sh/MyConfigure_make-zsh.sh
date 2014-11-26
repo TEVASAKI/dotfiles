@@ -10,5 +10,5 @@ CHECK ./configure --prefix=/usr/local --enable-locale --enable-multibyte
 CHECK make clean
 CHECK make -j 4
 #su -
-CHECK sudo paco -lD make install
+#CHECK sudo paco -lD make install
 
