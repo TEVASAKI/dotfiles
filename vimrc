@@ -262,6 +262,9 @@ if v:version > 703
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
 
+  " diffChar
+  NeoBundle 'vim-scripts/diffchar.vim'
+
   " NERDtree
   NeoBundle 'scrooloose/nerdtree'
 
