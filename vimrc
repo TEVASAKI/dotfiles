@@ -204,6 +204,7 @@ if v:version > 703
   "------------------------------------------------------------------------------------
   " Fisrs of all RUN this script for .vim directory
   " git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  " curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
   " bundle で管理するディレクトリを指定
   if has('vim_starting')
@@ -261,6 +262,9 @@ if v:version > 703
 
   " # 名前の通り、ブラウザでプレビュー 
   NeoBundle 'tyru/open-browser.vim'
+
+  " ctrlP
+  NeoBundle 'ctrlpvim/ctrlp.vim'
 
   " diffChar
   NeoBundle 'vim-scripts/diffchar.vim'
