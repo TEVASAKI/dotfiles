@@ -354,6 +354,8 @@ if v:version > 703
       source $VIMDIR/bundle/simplenote.vim/simplenoterc
       " Set the default vim filetype for notes.
       let g:SimplenoteFiletype="markdown"
+      " Sets the sort order by which notes should be listed.
+      let g:SimplenoteSortOrder="pinned,modifydate"
   endif
 
   " Install Check.
