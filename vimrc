@@ -216,7 +216,6 @@ if v:version > 703
   " NeoBundle 自体をNeoBundleで管理
   NeoBundleFetch 'Shougo/NeoBundle.vim'
 
-  call neobundle#end()
 
 
   "
@@ -364,6 +363,8 @@ if v:version > 703
   "------------------------------------------------------------------------------------
   " End NeoBundle Settings.
   "------------------------------------------------------------------------------------
+  " 2015/05/28 Change Neobundle setting tmp correspondence.
+  call neobundle#end()
 endif
 
 "
