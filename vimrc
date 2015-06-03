@@ -274,70 +274,70 @@ if v:version > 703
   "
   " Linux系 固有
   "
-
-  if has('unix') 
-    " # vim上で簡単に Compile & Run!
-    "   <\-r> で実行、らしい。
-    NeoBundle 'thinca/vim-quickrun'
-      "autocmd InsertEnter *   set shellslash
-      "autocmd InsertLeave *   set noshellslash
-      " 垂直分割
-      let g:quickrun_config={'*': {'split': 'vertical'}}
-      " 水平分割
-      "let g:quickrun_config={'*': {'split': ''}}
-      "set splitbelow
-
-      " vim-quickrunでの実行結果を出力する先をファイルにする。
-      let g:quickrun_config = {}
-      let g:quickrun_config['markdown'] = {}
-      let g:quickrun_config['markdown']['outputter'] = 'file'
-      let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
-
-    " コマンドが存在すれば
-    if executable('w3m')
-      " # w3mでPreview
-      NeoBundle 'yuratomo/w3m.vim'
-
-      "----------------------------------------------------------------------
-      " vim-quickrun のhookを利用して、実行結果ファイルを作成後、w3m.vimで読み込む
-      "----------------------------------------------------------------------
-      let t:outputter_w3m_vim_bufname = ''
-      let s:hook = {
-            \ 'name': 'outputter_w3m_vim',
-            \ 'kind': 'hook',
-            \ 'is_success': 0,
-            \ 'config': { 'enable': 1 }
-            \ , '_bufname': 'hogeee'
-            \}
-      function! s:hook.on_success(session, context)
-        if a:session.config.outputter != 'file' || !match(a:session.config['outputter/name'], '.html$\c')
-          return
-        endif
-
-        let mode = g:w3m#OPEN_SPLIT
-        let target = 'local'
-        let fname = a:session.outputter._file
-        let bufname = t:outputter_w3m_vim_bufname
-        if bufname != '' && bufwinnr(bufname) != -1
-          execute bufwinnr(bufname) 'wincmd w'
-          let mode = g:w3m#OPEN_NORAML
-          silent call w3m#Open( mode, target, fname )
-        else
-          silent call w3m#Open( mode, target, fname )
-          let t:outputter_w3m_vim_bufname = b:w3m_bufname
-        endif
-      endfunction
-
-      call quickrun#module#register(s:hook, 1)
-      unlet s:hook
-
-      " vim-markdown はftype=mkd として読み込むため、対策。
-      "let g:quickrun_config['mkd'] = copy(g:quickrun_config['markdown'])
-      "----------------------------------------------------------------------
-      " End w3m.vim setting
-      "----------------------------------------------------------------------
-    endif
-  endif
+" 
+"   if has('unix')
+"     " # vim上で簡単に Compile & Run!
+"     "   <\-r> で実行、らしい。
+"     NeoBundle 'thinca/vim-quickrun'
+"       "autocmd InsertEnter *   set shellslash
+"       "autocmd InsertLeave *   set noshellslash
+"       " 垂直分割
+"       let g:quickrun_config={'*': {'split': 'vertical'}}
+"       " 水平分割
+"       "let g:quickrun_config={'*': {'split': ''}}
+"       "set splitbelow
+" 
+"       " vim-quickrunでの実行結果を出力する先をファイルにする。
+"       let g:quickrun_config = {}
+"       let g:quickrun_config['markdown'] = {}
+"       let g:quickrun_config['markdown']['outputter'] = 'file'
+"       let g:quickrun_config['markdown']['outputter/name'] = tempname() . '.html'
+" 
+"     " コマンドが存在すれば
+"     if executable('w3m')
+"       " # w3mでPreview
+"       NeoBundle 'yuratomo/w3m.vim'
+" 
+"       "----------------------------------------------------------------------
+"       " vim-quickrun のhookを利用して、実行結果ファイルを作成後、w3m.vimで読み込む
+"       "----------------------------------------------------------------------
+"       let t:outputter_w3m_vim_bufname = ''
+"       let s:hook = {
+"             \ 'name': 'outputter_w3m_vim',
+"             \ 'kind': 'hook',
+"             \ 'is_success': 0,
+"             \ 'config': { 'enable': 1 }
+"             \ , '_bufname': 'hogeee'
+"             \}
+"       function! s:hook.on_success(session, context)
+"         if a:session.config.outputter != 'file' || !match(a:session.config['outputter/name'], '.html$\c')
+"           return
+"         endif
+" 
+"         let mode = g:w3m#OPEN_SPLIT
+"         let target = 'local'
+"         let fname = a:session.outputter._file
+"         let bufname = t:outputter_w3m_vim_bufname
+"         if bufname != '' && bufwinnr(bufname) != -1
+"           execute bufwinnr(bufname) 'wincmd w'
+"           let mode = g:w3m#OPEN_NORAML
+"           silent call w3m#Open( mode, target, fname )
+"         else
+"           silent call w3m#Open( mode, target, fname )
+"           let t:outputter_w3m_vim_bufname = b:w3m_bufname
+"         endif
+"       endfunction
+" 
+"       call quickrun#module#register(s:hook, 1)
+"       unlet s:hook
+" 
+"       " vim-markdown はftype=mkd として読み込むため、対策。
+"       "let g:quickrun_config['mkd'] = copy(g:quickrun_config['markdown'])
+"       "----------------------------------------------------------------------
+"       " End w3m.vim setting
+"       "----------------------------------------------------------------------
+"     endif
+"   endif
 
 
   "
