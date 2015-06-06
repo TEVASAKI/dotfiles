@@ -225,7 +225,7 @@ if v:version > 703
   " # 非同期プラグインのvimproc のダウンロードとコンパイル
   NeoBundle 'Shougo/vimproc', {
         \ 'build' : {
-        \   'mac' : 'make -f make_mac.mac',
+        \   'mac' : 'make -f make_mac.mak',
         \   'unix' : 'make -f make_unix.mak',
         \   },
         \ }
