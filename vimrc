@@ -79,6 +79,7 @@ set smartcase
 " 最後にnohlsearch と付いてるのがポイント、これが無いとEscを一回叩いた後におかしくなる
 set hlsearch
 nnoremap <Esc><Esc>  :<C-u>nohlsearch<CR>
+
 " Disable Beep
 set novisualbell
 set noerrorbells
@@ -160,6 +161,9 @@ inoremap <C-l> <Right>
 
 " ヤンクレジスタのペースト
 noremap PP "0p
+
+" 256色対応
+set t_Co=256
 
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
@@ -272,46 +276,47 @@ if v:version > 703
   NeoBundle 'scrooloose/nerdtree'
 
   " vim-airline
-  let g:airline_theme = 'powerlineish'
-  let g:airline#extensions#syntastic#enabled = 1
-  let g:airline#extensions#branch#enabled = 1
-  let g:airline#extensions#tabline#enabled = 1
+  NeoBundle 'bling/vim-airline'
+    let g:airline_theme = 'powerlineish'
+    let g:airline#extensions#syntastic#enabled = 1
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
 
-  " vim-airline
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-  
-  if !exists('g:airline_powerline_fonts')
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
-    let g:airline_left_sep          = '▶'
-    let g:airline_left_alt_sep      = '»'
-    let g:airline_right_sep         = '◀'
-    let g:airline_right_alt_sep     = '«'
-    let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-    let g:airline#extensions#readonly#symbol   = '⊘'
-    let g:airline#extensions#linecolumn#prefix = '¶'
-    let g:airline#extensions#paste#symbol      = 'ρ'
-    let g:airline_symbols.linenr    = '␊'
-    let g:airline_symbols.branch    = '⎇'
-    let g:airline_symbols.paste     = 'ρ'
-    let g:airline_symbols.paste     = 'Þ'
-    let g:airline_symbols.paste     = '∥'
-    let g:airline_symbols.whitespace = 'Ξ'
-  else
-    let g:airline#extensions#tabline#left_sep = ''
-    let g:airline#extensions#tabline#left_alt_sep = ''
-  
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
-  endif
+    " vim-airline
+    if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+    endif
+    
+    if !exists('g:airline_powerline_fonts')
+      let g:airline#extensions#tabline#left_sep = ' '
+      let g:airline#extensions#tabline#left_alt_sep = '|'
+      let g:airline_left_sep          = '▶'
+      let g:airline_left_alt_sep      = '»'
+      let g:airline_right_sep         = '◀'
+      let g:airline_right_alt_sep     = '«'
+      let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+      let g:airline#extensions#readonly#symbol   = '⊘'
+      let g:airline#extensions#linecolumn#prefix = '¶'
+      let g:airline#extensions#paste#symbol      = 'ρ'
+      let g:airline_symbols.linenr    = '␊'
+      let g:airline_symbols.branch    = '⎇'
+      let g:airline_symbols.paste     = 'ρ'
+      let g:airline_symbols.paste     = 'Þ'
+      let g:airline_symbols.paste     = '∥'
+      let g:airline_symbols.whitespace = 'Ξ'
+    else
+      let g:airline#extensions#tabline#left_sep = ''
+      let g:airline#extensions#tabline#left_alt_sep = ''
+    
+      " powerline symbols
+      let g:airline_left_sep = ''
+      let g:airline_left_alt_sep = ''
+      let g:airline_right_sep = ''
+      let g:airline_right_alt_sep = ''
+      let g:airline_symbols.branch = ''
+      let g:airline_symbols.readonly = ''
+      let g:airline_symbols.linenr = ''
+    endif
 
   "
   " Linux系 固有
