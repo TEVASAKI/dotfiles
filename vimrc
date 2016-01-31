@@ -163,7 +163,7 @@ inoremap <C-l> <Right>
 noremap PP "0p
 
 " 256色対応
-set t_Co=256
+"set t_Co=256
 
 " Window 分割関連
 " insert mode 時でもCtrl + w,v を押すと縦分割され、 
@@ -239,15 +239,20 @@ if v:version > 703
 
   " Color scheme
   NeoBundle 'altercation/vim-colors-solarized'
+    syntax enable
+    set background=dark
+    colorscheme solarized
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
   "NeoBundle 'vim-scripts/phd.git'
 
   " # HTMLタグなど、囲まれているもの の編集補助
   NeoBundle 'tpope/vim-surround'
 
   " # ステータスライン表示をオシャレに
-  NeoBundle 'itchyny/lightline.vim'
+  "NeoBundle 'itchyny/lightline.vim'
     set laststatus=2
-    let g:lightline = { 'colorscheme': 'solarized' }
+  "  let g:lightline = { 'colorscheme': 'solarized' }
 
   " # Markdown, textfile のリアルタイムプレビュー
   " :PrevimOpen を実行してブラウザで開くのです。
@@ -279,7 +284,9 @@ if v:version > 703
   " vim-airline
   NeoBundle 'bling/vim-airline'
   NeoBundle 'vim-airline/vim-airline-themes'
-    let g:airline_theme = 'molokai'
+    "let g:airline_theme = 'molokai'
+    "let g:airline_theme = 'solarized'
+    let g:airline_theme = 'luna'
     let g:airline#extensions#syntastic#enabled = 1
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
