@@ -238,7 +238,8 @@ if v:version > 703
   "  \   'cygwin' : 'make -f make_cygwin.mak',
 
   " Color scheme
-  NeoBundle 'vim-scripts/phd.git'
+  NeoBundle 'altercation/vim-colors-solarized'
+  "NeoBundle 'vim-scripts/phd.git'
 
   " # HTMLタグなど、囲まれているもの の編集補助
   NeoBundle 'tpope/vim-surround'
@@ -277,7 +278,8 @@ if v:version > 703
 
   " vim-airline
   NeoBundle 'bling/vim-airline'
-    let g:airline_theme = 'powerlineish'
+  NeoBundle 'vim-airline/vim-airline-themes'
+    let g:airline_theme = 'molokai'
     let g:airline#extensions#syntastic#enabled = 1
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
@@ -321,7 +323,17 @@ if v:version > 703
   "
   " Linux系 固有
   "
-" 
+  " # SimplenotE
+  NeoBundle 'mrtazz/simplenote.vim'
+    " let g:SimplenoteUsername = "xxxx"
+    " let g:SimplenotePassword = "yyyy"
+    " login 情報は別ファイル
+    source $VIMDIR/bundle/simplenote.vim/simplenoterc
+    " Set the default vim filetype for notes.
+    let g:SimplenoteFiletype="markdown"
+    " Sets the sort order by which notes should be listed.
+    let g:SimplenoteSortOrder="pinned,modifydate"
+"
 "   if has('unix')
 "     " # vim上で簡単に Compile & Run!
 "     "   <\-r> で実行、らしい。
