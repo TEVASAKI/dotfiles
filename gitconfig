@@ -1,10 +1,14 @@
 [user]
-	name = TEVA
-	email = vanquish.ld@gmail.com
+	email = vanquish.ld+github@gmail.com
+	name = TEVASAKI-
 [push]
 	default = current
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+	precomposeunicode = true
+	quotepath = false
 [color]
 	diff = auto
 	status = auto
-	branch = auto
 	grep = auto
+	branch = auto
