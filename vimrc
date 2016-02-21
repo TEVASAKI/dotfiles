@@ -32,7 +32,8 @@ endif
 " ファイル保存時の文字コード
 :set fileencoding=utf-8
 " ファイル読込時の文字コード
-:set fileencodings=utf-8,cp932,sjis,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp
+:set fileencodings=utf-8
+":set fileencodings=utf-8,cp932,sjis,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp
 
 " 改行コード自動認識
 set fileformats=unix,dos,mac

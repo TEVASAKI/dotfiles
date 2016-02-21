@@ -221,4 +221,6 @@ fi
 # export PATH=/usr/local/bin:$PATH
 # alias sudo='sudo env PATH=$PATH'
 
+#PATH
+export PATH=~/.cabal/bin:$PATH
 
