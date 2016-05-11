@@ -12,13 +12,14 @@ endif
 " カラー設定:
 "---------------------------------------------------------------------------
 " git@github.com:vim-scripts/phd.git
-colorscheme phd
+colorscheme solarized
+"colorscheme phd
 "colorscheme industry
 
 "---------------------------------------------------------------------------
 " フォント指定
 "---------------------------------------------------------------------------
-set guifont=Myryca\ Regular:h16
+"set guifont=Myryca\ Regular:h16
 set guifont=Ricty\ Regular:h14
 
 "---------------------------------------------------------------------------
